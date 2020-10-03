@@ -70,9 +70,13 @@ registerBlockType('pgc-plugin/calendar', {
                 eventattachments: false,
                 eventcreator: false,
                 eventcalendarname: false,
+<<<<<<< HEAD
                 eventsourcelink: false,
                 eventlinktargetblank: true,
                 eventlinkcallback: false
+=======
+                eventsourcelink: false
+>>>>>>> 5a18ed0 (Add source information for custom event link)
             }
         },
         fullcalendarconfig: {
@@ -177,8 +181,11 @@ registerBlockType('pgc-plugin/calendar', {
             ["eventcreator", window.pgc_trans.eventcreator],
             ["eventcalendarname", window.pgc_trans.eventcalendarname],
             ["eventsourcelink", window.pgc_trans.eventsourcelink],
+<<<<<<< HEAD
             ["eventlinktargetblank", window.pgc_trans.eventlinktargetblank],
             ["eventlinkcallback", window.pgc_trans.eventlinkcallback],
+=======
+>>>>>>> 5a18ed0 (Add source information for custom event link)
         ].map((item) => {
             return <CheckboxControl className="pgc-sidebar-row" onChange={onCalendarConfigChange.bind(item[0])}
                 label={item[1]} checked={config[item[0]]} />;
@@ -360,7 +367,8 @@ registerBlockType('pgc-plugin/calendar', {
                         eventattendees: false,
                         eventattachments: false,
                         eventcreator: false,
-                        eventcalendarname: false
+                        eventcalendarname: false,
+                        eventsourcelink: false
                     }
                 },
                 fullcalendarconfig: {
@@ -559,9 +567,13 @@ registerBlockType('pgc-plugin/calendar', {
                         eventattachments: false,
                         eventcreator: false,
                         eventcalendarname: false,
+<<<<<<< HEAD
                         eventsourcelink: false,
                         eventlinktargetblank: true,
                         eventlinkcallback: false
+=======
+                        eventsourcelink: false
+>>>>>>> 5a18ed0 (Add source information for custom event link)
                     }
                 },
                 fullcalendarconfig: {

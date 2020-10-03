@@ -635,6 +635,8 @@ function pgc_ajax_get_calendar() {
           'htmlSourceTitle' => !empty($item['source']['title']) ? $item['source']['title'] : '',
           'source' => $item['source'],
           'visibility' => !empty($item['visibility']) ? $item['visibility'] : '',
+          'htmlSourceUrl' => !empty($item['source.url']) ? $item['source.url'] : '',
+          'htmlSourceTitle' => !empty($item['source.title']) ? $item['source.title'] : '',
         ];
         if (!empty($item['start']['date'])) {
           $newItem['allDay'] = true;
