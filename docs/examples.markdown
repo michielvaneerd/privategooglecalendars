@@ -55,6 +55,13 @@ The popup is disabled by default. Below you find all the properties you can set:
 
     [pgc eventpopup="true" eventlink="true" eventdescription="true" eventattachments="true" eventattendees="true" eventlocation="true" eventcreator="true" eventcalendarname="true"]
 
+### Use custom link
+
+Is requested, the popup displays a link pointing to Google Agenda event. Userr can define is proper link by using eventsourcelink:
+
+    [pgc eventpopup="true" eventlink="true" eventsourcelink="true"]
+
+Now the URL will contain information stored in fields "source.title" for the name and "source.url" for the URL.
 
 ## Limit the events
 

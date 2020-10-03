@@ -104,6 +104,9 @@ wordpress/wp-content/plugins/private-google-calendars/lib/fullcalendar4/timegrid
 * Conditionally load defines to prevent logs.
 * Always show the "Remove plugin data" option, to prevent a lockin where you have no valid token anymore, but you can't delete your plugin data.
 
+= 20201003 =
+* Add possibility to use source information in event link in place of event link URL to Google Agenda
+
 = 20200902 =
 * Fixed security bug where you could display unselected private calendars
 * Now possible to use private and public calendars at the same time

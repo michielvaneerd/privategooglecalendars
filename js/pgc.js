@@ -89,6 +89,7 @@
     var showEventAttachments = castAttrValue($calendar.getAttribute('data-eventattachments'), false);
     var showEventCreator = castAttrValue($calendar.getAttribute('data-eventcreator'), false);
     var showEventCalendarname = castAttrValue($calendar.getAttribute('data-eventcalendarname'), false);
+    var showEventSourceLink = castAttrValue($calendar.getAttribute('data-eventsourcelink'), false);
 
     var uncheckedCalendarIds = $calendarFilter && $calendarFilter.getAttribute("data-uncheckedcalendarids") ? JSON.parse($calendarFilter.getAttribute("data-uncheckedcalendarids")) : [];
 
@@ -323,7 +324,11 @@
             texts.push('</div></div>');
           }
           if (showEventLink) {
-            texts.push('<div class="pgc-popup-row pgc-event-link"><div class="pgc-popup-row-icon"><span class="dashicons dashicons-external"></span></div><div class="pgc-popup-row-value"><a rel="noopener noreferrer" target="_blank" href="' + info.event.extendedProps.htmlLink + '">' + pgc_object.trans.go_to_event + '</a></div></div>');
+            if (showEventSourceLink) {
+              texts.push('<div class="pgc-popup-row pgc-event-link"><div class="pgc-popup-row-icon"><span class="dashicons dashicons-external"></span></div><div class="pgc-popup-row-value"><a rel="noopener noreferrer" target="_blank" href="' + info.event.extendedProps.htmlSourceUrl + '">' + info.event.extendedProps.htmlSourceTitle + '</a></div></div>');
+            } else {
+              texts.push('<div class="pgc-popup-row pgc-event-link"><div class="pgc-popup-row-icon"><span class="dashicons dashicons-external"></span></div><div class="pgc-popup-row-value"><a rel="noopener noreferrer" target="_blank" href="' + info.event.extendedProps.htmlLink + '">' + pgc_object.trans.go_to_event + '</a></div></div>');
+            }
           }
           info.el.setAttribute("data-tippy-content", texts.join("\n"));
           info.el.setAttribute("data-calendarid", info.event.extendedProps.calId);
