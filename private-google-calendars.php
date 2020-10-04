@@ -172,6 +172,7 @@ function pgc_register_block() {
     'eventcreator' => __('Show event creator', 'private-google-calendars'),
     'eventcalendarname' => __('Show calendarname', 'private-google-calendars'),
     'eventsourcelink' => __('Show event source information in place of event link', 'private-google-calendars'),
+    'eventlinktargetblank' => __('Open event link in new page/tab', 'private-google-calendars'),
     'more_than' => __('...more than', 'private-google-calendars'),
     'days_ago' => __('days ago', 'private-google-calendars'),
     'days_from_now' => __('days from now', 'private-google-calendars'),
@@ -246,6 +247,7 @@ function pgc_shortcode($atts = [], $content = null, $tag) {
   $userEventCreator = 'false';
   $userEventCalendarname = 'false';
   $userEventSourceLink = 'false';
+  $userEventLinkTargetBlank = 'true';
   $calendarIds = '';
   $uncheckedCalendarIds = ''; // in filter
   // Get all non-fullcalendar known properties
@@ -304,6 +306,10 @@ function pgc_shortcode($atts = [], $content = null, $tag) {
     }
     if ($key === 'eventsourcelink') {
       $userEventSourceLink = $value;
+      continue;
+    }
+    if ($key === 'eventlinktargetblank') {
+      $userEventLinkTargetBlank = $value;
       continue;
     }
     if ($key === 'uncheckedcalendarids' && !empty($value)) {
@@ -381,7 +387,8 @@ function pgc_shortcode($atts = [], $content = null, $tag) {
     . $userEventLink . '\' data-eventdescription=\'' . $userEventDescription . '\' data-eventlocation=\''
     . $userEventLocation . '\' data-eventattachments=\'' . $userEventAttachments . '\' data-eventattendees=\''
     . $userEventAttendees . '\' data-eventcreator=\'' . $userEventCreator . '\' data-eventcalendarname=\''
-    . $userEventCalendarname . '\' data-eventsourcelink=\'' . $userEventSourceLink . '\' data-hidefuture=\'' . $userHideFuture . '\' data-hidepassed=\''
+    . $userEventCalendarname . '\' data-eventsourcelink=\'' . $userEventSourceLink . '\' data-eventlinktargetblank=\''
+    . $userEventLinkTargetBlank . '\' data-hidefuture=\'' . $userHideFuture . '\' data-hidepassed=\''
     . $userHidePassed . '\' data-config=\'' . json_encode($userConfig) . '\' data-locale="'
     . get_locale() . '" data-theme="' . $activeTheme . '" class="pgc-calendar"></div>' . ($userFilter === 'bottom' ? $filterHTML : '') . '</div>';
 }
@@ -1677,6 +1684,7 @@ class Pgc_Calendar_Widget extends WP_Widget {
     $eventcreator = $this->instanceOptionToBooleanString($instance, 'eventcreator', 'false');
     $eventcalendarname = $this->instanceOptionToBooleanString($instance, 'eventcalendarname', 'false');
     $eventsourcelink = $this->instanceOptionToBooleanString($instance, 'eventsourcelink', 'false');
+    $eventlinktargetblank = $this->instanceOptionToBooleanString($instance, 'eventlinktargetblank', 'false');
     $hidepassed = $this->instanceOptionToBooleanString($instance, 'hidepassed', 'false');
     $hidepasseddays = empty($instance['hidepasseddays']) ? 0 : $instance['hidepasseddays'];
     $hidefuture = $this->instanceOptionToBooleanString($instance, 'hidefuture', 'false');
@@ -1734,6 +1742,7 @@ class Pgc_Calendar_Widget extends WP_Widget {
           data-eventcreator='<?php echo $eventcreator; ?>'
           data-eventcalendarname='<?php echo $eventcalendarname; ?>'
           data-eventsourcelink='<?php echo $eventsourcelink; ?>'
+          data-eventlinktargetblank='<?php echo $eventlinktargetblank; ?>'
           data-hidepassed='<?php echo $hidepassed === 'true' ? $hidepasseddays : 'false'; ?>'
           data-hidefuture='<?php echo $hidefuture === 'true' ? $hidefuturedays : 'false'; ?>'
           data-locale='<?php echo get_locale(); ?>'
@@ -1762,6 +1771,7 @@ class Pgc_Calendar_Widget extends WP_Widget {
     $eventcreatorValue = isset($instance['eventcreator']) ? $instance['eventcreator'] === 'true' : false;
     $eventcalendarnameValue = isset($instance['eventcalendarname']) ? $instance['eventcalendarname'] === 'true' : false;
     $eventsourcelinkValue = isset($instance['eventsourcelink']) ? $instance['eventsourcelink'] === 'true' : false;
+    $eventlinktargetblankValue = isset($instance['eventlinktargetblank']) ? $instance['eventlinktargetblank'] === 'true' : false;
     $hidepassedValue = isset($instance['hidepassed']) ? $instance['hidepassed'] === 'true' : false;
     $hidepasseddaysValue = empty($instance['hidepasseddays']) ? 0 : $instance['hidepasseddays'];
     $hidefutureValue = isset($instance['hidefuture']) ? $instance['hidefuture'] === 'true' : false;
@@ -1954,7 +1964,14 @@ class Pgc_Calendar_Widget extends WP_Widget {
           id="<?php echo $this->get_field_id('eventsourcelink'); ?>"
           name="<?php echo $this->get_field_name('eventsourcelink'); ?>"
           value="true" />
-        <?php _e('Show source information in popup', 'private-google-calendars'); ?></label>
+        <?php _e('Show source information link in popup', 'private-google-calendars'); ?></label>
+      
+      <label class="pgc-calendar-widget-row" for="<?php echo $this->get_field_id('eventlinktargetblank'); ?>"><input data-linked-id="<?php echo $popupCheckboxId; ?>" type="checkbox"
+          <?php checked($eventlinktargetblankValue, true, true); ?>
+          id="<?php echo $this->get_field_id('eventlinktargetblank'); ?>"
+          name="<?php echo $this->get_field_name('eventlinktargetblank'); ?>"
+          value="true" />
+        <?php _e('Open popup link in new page/tab', 'private-google-calendars'); ?></label>
       
       <label class="pgc-calendar-widget-row" for="<?php echo $this->get_field_id('eventcreator'); ?>"><input data-linked-id="<?php echo $popupCheckboxId; ?>" type="checkbox"
           <?php checked($eventcreatorValue, true, true); ?>
@@ -2109,6 +2126,9 @@ class Pgc_Calendar_Widget extends WP_Widget {
         : '';
     $instance['eventsourcelink'] = (!empty($new_instance['eventsourcelink']))
         ? strip_tags($new_instance['eventsourcelink'] )
+        : '';
+    $instance['eventlinktargetblank'] = (!empty($new_instance['eventlinktargetblank']))
+        ? strip_tags($new_instance['eventlinktargetblank'] )
         : '';
     // START FIX calids
     // Note: before we used thiscalendarids, after saving this widget, thiscalendarids is removed from the widget

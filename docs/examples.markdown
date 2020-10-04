@@ -63,6 +63,14 @@ Is requested, the popup displays a link pointing to Google Agenda event. User ca
 
 Now the URL will contain information stored in Google Agenda event fields "source.title" for the name and "source.url" for the URL.
 
+### Open link in new page/tab
+
+By default, the link is opened in new page/tab in the browser, but it is possible to override this behavior with `eventlinktargetblank` property:
+
+    [pgc eventpopup="true" eventlink="true" eventsourcelink="true" eventlinktargetblank="false"]
+
+It can be useful when custom link is used.
+
 ## Limit the events
 
 To display all events instead of showing the "+2 more" text:
