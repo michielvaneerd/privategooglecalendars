@@ -302,7 +302,7 @@ function pgc_shortcode($atts = [], $content = null, $tag) {
       $userEventCalendarname = $value;
       continue;
     }
-    if ($key === 'eventsourelink') {
+    if ($key === 'eventsourcelink') {
       $userEventSourceLink = $value;
       continue;
     }
@@ -617,8 +617,8 @@ function pgc_ajax_get_calendar() {
           'attachments' => !empty($item['attachments']) ? $item['attachments'] : [],
           'location' => !empty($item['location']) ? $item['location'] : '',
           'visibility' => !empty($item['visibility']) ? $item['visibility'] : '',
-          'htmlSourceUrl' => !empty($item['source.url']) ? $item['source.url'] : '',
-          'htmlSourceTitle' => !empty($item['source.title']) ? $item['source.title'] : '',
+          'htmlSourceUrl' => !empty($item['source']['url']) ? $item['source']['url'] : '',
+          'htmlSourceTitle' => !empty($item['source']['title']) ? $item['source']['title'] : '',
         ];
         if (!empty($item['start']['date'])) {
           $newItem['allDay'] = true;

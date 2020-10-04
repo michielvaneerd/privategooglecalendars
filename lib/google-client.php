@@ -298,7 +298,7 @@ class PGC_GoogleCalendarClient {
 
   private $googleClient;
 
-  private static $propsToGet = 'items(id,summary,description,start,end,htmlLink,creator,location,attendees,attachments,colorId,visibility,source.title,source.url)';
+  private static $propsToGet = 'items(id,summary,description,start,end,htmlLink,creator,location,attendees,attachments,colorId,visibility,source)';
 
   function __construct($client) {
     $this->googleClient = $client;
