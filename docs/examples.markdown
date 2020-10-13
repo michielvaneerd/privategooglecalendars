@@ -71,6 +71,26 @@ By default, the link is opened in new page/tab in the browser, but it is possibl
 
 It can be useful when custom link is used.
 
+### Use JS callback in place of link
+
+It is possible to replace the link in the popup by a call to JavaScript function. To do that use the `eventlinkcallback` property:
+
+    [pgc eventpopup="true" eventlink="true" eventlinkcallback="true"]
+
+When this property is set to `true` the link displayed in the popup call an internal JS function that the user have to declare:
+
+    function PGC_EventCallBack(id, title)
+    {
+        alert("You clicked on event " + title + " (Google Agenda internal ID is " + id + ")");
+    }
+
+A second function have also to declared to returned the text displayed is the popup:
+
+    function PGC_EventLinkAction(id, title)
+    {
+        return "This is my text";
+    }
+
 ## Limit the events
 
 To display all events instead of showing the "+2 more" text:

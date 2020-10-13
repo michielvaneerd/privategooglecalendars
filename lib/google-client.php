@@ -1,6 +1,24 @@
 <?php
 
 /**
+ * Write du WordPress log
+ **/
+if (!function_exists("write_log"))
+{
+  function write_log($log)
+  {
+    if (is_array($log) || is_object($log))
+    {
+      error_log(print_r($log, true));
+    }
+    else
+    {
+      error_log($log);
+    }
+  }
+}
+
+/**
  * Exception with a description field.
  **/
 class PGC_GoogleClient_RequestException extends Exception {
@@ -79,11 +97,13 @@ class PGC_GoogleClient_Request {
     if (is_wp_error($result)) {
       throw new PGC_GoogleClient_RequestException($result->get_error_message());
     }
-
+	
     $decodedResult = json_decode(wp_remote_retrieve_body($result), true);
     if (is_null($decodedResult)) {
       throw new PGC_GoogleClient_RequestException('Response is invalid JSON.', 0, $result);
     }
+	//write_log($decodedResult);
+
     if (!empty($decodedResult['error'])) {
       $exCode = 0;
       $exMessage = 'Something went wrong.';
