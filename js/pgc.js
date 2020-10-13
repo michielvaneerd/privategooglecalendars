@@ -89,6 +89,9 @@
     var showEventAttachments = castAttrValue($calendar.getAttribute('data-eventattachments'), false);
     var showEventCreator = castAttrValue($calendar.getAttribute('data-eventcreator'), false);
     var showEventCalendarname = castAttrValue($calendar.getAttribute('data-eventcalendarname'), false);
+    var showEventSourceLink = castAttrValue($calendar.getAttribute('data-eventsourcelink'), false);
+    var openEventLinkTargetBlank = castAttrValue($calendar.getAttribute('data-eventlinktargetblank'), true);
+    var showEventLinkCallback = castAttrValue($calendar.getAttribute('data-eventlinkcallback'), false);
 
     var uncheckedCalendarIds = $calendarFilter && $calendarFilter.getAttribute("data-uncheckedcalendarids") ? JSON.parse($calendarFilter.getAttribute("data-uncheckedcalendarids")) : [];
 
@@ -318,7 +321,22 @@
             texts.push('</div></div>');
           }
           if (showEventLink) {
-            texts.push('<div class="pgc-popup-row pgc-event-link"><div class="pgc-popup-row-icon"><span class="dashicons dashicons-external"></span></div><div class="pgc-popup-row-value"><a rel="noopener noreferrer" target="_blank" href="' + info.event.extendedProps.htmlLink + '">' + pgc_object.trans.go_to_event + '</a></div></div>');
+            if (showEventSourceLink) {
+              if (info.event.source.url && info.event.source.title) {
+                texts.push('<div class="pgc-popup-row pgc-event-link"><div class="pgc-popup-row-icon"><span class="dashicons dashicons-external"></span></div><div class="pgc-popup-row-value"><a rel="noopener noreferrer" ' + (openEventLinkTargetBlank ? 'target="_blank" ' : 'target="_self" ') + 'href="' + info.event.source.url + '">' + info.event.source.title + '</a></div></div>');
+              } else {
+                // Nothing to display
+              }
+            } if (showEventLinkCallback) {
+              let title = info.event.title.replace(/'/g, "\'");
+              let action = "declare PGC_EventLinkAction(id, title)";
+              if (typeof PGC_EventLinkAction == "function") {
+                action = PGC_EventLinkAction(info.event.id, title);
+              }
+              texts.push('<div class="pgc-popup-row pgc-event-link"><div class="pgc-popup-row-icon"><span class="dashicons dashicons-external"></span></div><div class="pgc-popup-row-value"><a target="_self" id="PGC_Event_' + info.event.id + '" href="javascript:void(0);" onclick="PGC_EventCallBack(\'' + info.event.id + '\', \'' + title + '\'); return false;">' + action + '</a></div></div>');
+            } else {
+              texts.push('<div class="pgc-popup-row pgc-event-link"><div class="pgc-popup-row-icon"><span class="dashicons dashicons-external"></span></div><div class="pgc-popup-row-value"><a rel="noopener noreferrer" ' + (openEventLinkTargetBlank ? 'target="_blank" ' : 'target="_self" ') + 'href="' + info.event.extendedProps.htmlLink + '">' + pgc_object.trans.go_to_event + '</a></div></div>');
+            }
           }
           info.el.setAttribute("data-tippy-content",  texts.join("\n"));
           info.el.setAttribute("data-calendarid", info.event.extendedProps.calId);

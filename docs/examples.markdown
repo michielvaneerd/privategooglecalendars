@@ -52,6 +52,41 @@ The popup is disabled by default. Below you find all the properties you can set:
 
     [pgc eventpopup="true" eventlink="true" eventdescription="true" eventattachments="true" eventattendees="true" eventlocation="true" eventcreator="true" eventcalendarname="true"]
 
+### Use custom link
+
+Is requested, the popup displays a link pointing to Google Agenda event. User can define his proper link by using `eventsourcelink` property:
+
+    [pgc eventpopup="true" eventlink="true" eventsourcelink="true"]
+
+Now the URL will contain information stored in Google Agenda event fields "source.title" for the name and "source.url" for the URL.
+
+### Open link in new page/tab
+
+By default, the link is opened in new page/tab in the browser, but it is possible to override this behavior with `eventlinktargetblank` property:
+
+    [pgc eventpopup="true" eventlink="true" eventsourcelink="true" eventlinktargetblank="false"]
+
+It can be useful when custom link is used.
+
+### Use JS callback in place of link
+
+It is possible to replace the link in the popup by a call to JavaScript function. To do that use the `eventlinkcallback` property:
+
+    [pgc eventpopup="true" eventlink="true" eventlinkcallback="true"]
+
+When this property is set to `true` the link displayed in the popup call an internal JS function that the user have to declare:
+
+    function PGC_EventCallBack(id, title)
+    {
+        alert("You clicked on event " + title + " (Google Agenda internal ID is " + id + ")");
+    }
+
+A second function have also to declared to returned the text displayed is the popup:
+
+    function PGC_EventLinkAction(id, title)
+    {
+        return "This is my text";
+    }
 
 ## Limit the events
 

@@ -1,6 +1,24 @@
 <?php
 
 /**
+ * Write du WordPress log
+ **/
+if (!function_exists("write_log"))
+{
+  function write_log($log)
+  {
+    if (is_array($log) || is_object($log))
+    {
+      error_log(print_r($log, true));
+    }
+    else
+    {
+      error_log($log);
+    }
+  }
+}
+
+/**
  * Exception with a description field.
  **/
 class PGC_GoogleClient_RequestException extends Exception {
@@ -79,11 +97,13 @@ class PGC_GoogleClient_Request {
     if (is_wp_error($result)) {
       throw new PGC_GoogleClient_RequestException($result->get_error_message());
     }
-
+	
     $decodedResult = json_decode(wp_remote_retrieve_body($result), true);
     if (is_null($decodedResult)) {
       throw new PGC_GoogleClient_RequestException('Response is invalid JSON.', 0, $result);
     }
+	//write_log($decodedResult);
+
     if (!empty($decodedResult['error'])) {
       $exCode = 0;
       $exMessage = 'Something went wrong.';
@@ -305,7 +325,7 @@ class PGC_GoogleCalendarClient {
   public function getEvents($calendarId, $params) {
     $url = str_replace('$calendarId', urlencode($calendarId), self::GOOGLE_CALENDAR_EVENTS_URI);
     // https://developers.google.com/google-apps/calendar/performance#partial-response
-    $params['fields'] = "items(summary,description,start,end,htmlLink,creator,location,attendees,attachments,colorId)";
+    $params['fields'] = "items(id,summary,description,start,end,htmlLink,creator,location,attendees,attachments,colorId,source)";
     $result = PGC_GoogleClient_Request::doRequest(
       $url,
       $params,
@@ -322,7 +342,7 @@ class PGC_GoogleCalendarClient {
   public function getEventsPublic($calendarId, $params, $apiKey, $referer) {
     $url = str_replace('$calendarId', urlencode($calendarId), self::GOOGLE_CALENDAR_EVENTS_URI);
     // https://developers.google.com/google-apps/calendar/performance#partial-response
-    $params['fields'] = "items(summary,description,start,end,htmlLink,creator,location,attendees,attachments,colorId)";
+    $params['fields'] = "items(id,summary,description,start,end,htmlLink,creator,location,attendees,attachments,colorId,source)";
     $params['key'] = $apiKey;
     $result = PGC_GoogleClient_Request::doRequest(
       $url,

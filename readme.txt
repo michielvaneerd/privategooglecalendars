@@ -16,7 +16,7 @@ This plugin can display multiple private (and public) Google calendars with a sh
 
 See the [webpage](https://michielvaneerd.github.io/privategooglecalendars/) for more information.
 
-= Features =
+== Features ==
 
 * Access to _private_ (and public) calendars by using OAuth2 or an API key.
 * Adjustable caching - this can greatly improve the performance.
@@ -29,6 +29,14 @@ See the [webpage](https://michielvaneerd.github.io/privategooglecalendars/) for 
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Use the Settings->Private Google Calendars screen to configure the plugin
 4. See the Help tab in the settings screen for information about setting up the OAuth2 access and using the shortcode and/or widget.
+
+== Build ==
+
+1. Use Docker with `docker-compose.yml` file
+2. Inside Docker, install Node.js and npm: `apt install nodejs npm`
+3. Install additional npm requirements: `npm install --save-dev wp-scripts`
+4. Go to folder /var/www/html/wp-content/plugins/private-google-calendars
+5. Launch npm asset build: `npm run build`
 
 == Frequently Asked Questions ==
 
@@ -67,6 +75,12 @@ wordpress/wp-content/plugins/private-google-calendars/lib/fullcalendar4/list/mai
 wordpress/wp-content/plugins/private-google-calendars/lib/fullcalendar4/timegrid/main.min.js`
 
 == Changelog ==
+
+= 20201013 =
+* Add possibility to use proper JavaScript callback in place of event link URL to Google Agenda 
+
+= 20201003 =
+* Add possibility to use source information in event link in place of event link URL to Google Agenda
 
 = 20200902 =
 * Fixed security bug where you could display unselected private calendars
