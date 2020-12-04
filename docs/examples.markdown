@@ -6,7 +6,7 @@ permalink: /examples/
 
 The Private Google Calendars plugin provides a widget, shortcode and Gutenberg block. Each one has the same functionality but has to be configured differently. The configurations of the widget and Gutenberg block are almost the same as this can be done with a user interface and speaks mostly for itself. The shortcode configuration differs a lot because it has to be specified as attributes of the shortcode.
 
-Many of the below examples are really FullCalendar options. Currently this plugin uses the v4 version of FullCalendar. If you can't find your answer here, you can have a look at <a href="https://fullcalendar.io/docs/v4#toc" target="_blank">FullCalendar documentation</a> or send a message to the <a href="https://wordpress.org/support/plugin/private-google-calendars/" target="_blank">Wordpress forum</a>.
+Many of the below examples are really FullCalendar options. Currently this plugin uses the v4 version of FullCalendar. If you can't find your answer here, you can have a look at https://fullcalendar.io/docs/v4#toc or send a message to the forum at https://wordpress.org/support/plugin/private-google-calendars/.
 
 ## Show all private calendars
 
@@ -171,7 +171,7 @@ If you use the widget or Gutenberg block, you add this to the _FullCalendar conf
 
 ## Format date on titlebar
 
-See <a href="https://fullcalendar.io/docs/v4/titleFormat" target="_blank">https://fullcalendar.io/docs/v4/titleFormat</a>.
+See https://fullcalendar.io/docs/v4/titleFormat.
 
 For example if you want to display only the title as Tuesday, 12th November:
 
@@ -194,7 +194,7 @@ Instead of explicitly specifying the date format `D MMMM YYYY dddd` you can also
 
 ## Format date in weeklist
 
-See <a href="https://fullcalendar.io/docs/v4/listDayFormat" target="_blank">https://fullcalendar.io/docs/v4/listDayFormat</a> and <a href="https://fullcalendar.io/docs/v4/listDayAltFormat" target="_blank">https://fullcalendar.io/docs/v4/listDayAltFormat</a>.
+See https://fullcalendar.io/docs/v4/listDayFormat and https://fullcalendar.io/docs/v4/listDayAltFormat.
 
 If you use the widget or Gutenberg block, you add this to the _FullCalendar config_ textfield:
 
