@@ -6,7 +6,6 @@ permalink: /examples/
 
 The Private Google Calendars plugin provides a widget, shortcode and Gutenberg block. Each one has the same functionality but has to be configured differently. The configurations of the widget and Gutenberg block are almost the same as this can be done with a user interface and speaks mostly for itself. The shortcode configuration differs a lot because it has to be specified as attributes of the shortcode.
 
-
 Many of the below examples are really FullCalendar options. Currently this plugin uses the v4 version of FullCalendar. If you can't find your answer here, you can have a look at <a href="https://fullcalendar.io/docs/v4#toc" target="_blank">FullCalendar documentation</a> or send a message to the <a href="https://wordpress.org/support/plugin/private-google-calendars/" target="_blank">Wordpress forum</a>.
 
 ## Show all private calendars
