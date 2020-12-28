@@ -396,6 +396,11 @@ function pgc_enqueue_scripts() {
       ['fullcalendar'], PGC_PLUGIN_VERSION, true);
   wp_enqueue_script('pgc', plugin_dir_url(__FILE__) . 'js/pgc.js',
       ['fullcalendar'], PGC_PLUGIN_VERSION, true);
+
+  // Whitelist the login nonce for Litespeed Cache plugin
+  if (class_exists('LiteSpeed_Cache_API')) {
+    LiteSpeed_Cache_API::nonce_action('pgc_nonce');
+  }
   $nonce = wp_create_nonce('pgc_nonce');
   wp_localize_script('pgc', 'pgc_object', [
     'ajax_url' => admin_url('admin-ajax.php'),
