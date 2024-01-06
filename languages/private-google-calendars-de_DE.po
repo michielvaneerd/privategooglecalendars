@@ -1,0 +1,369 @@
+# Translation of Plugins - Private Google Calendars - Development (trunk) in Dutch
+# This file is distributed under the same license as the Plugins - Private Google Calendars - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: +0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0\n"
+"Language: de\n"
+"Project-Id-Version: PCG\n"
+
+#: private-google-calendars.php:1574
+msgid "Event popup options"
+msgstr "Ereignis-Popup-Optionen"
+
+#: private-google-calendars.php:1570
+msgid "from now"
+msgstr "ab sofort"
+
+#: private-google-calendars.php:1560
+msgid "days ago"
+msgstr "Tage zuvor"
+
+#: private-google-calendars.php:1558 private-google-calendars.php:1568
+msgid "...more than"
+msgstr "...mehr als"
+
+#: private-google-calendars.php:1542
+msgid "Calendar options"
+msgstr "Kalender-Optionen"
+
+#: private-google-calendars.php:1535
+msgid "Enter comma separated list of calendar ID's:"
+msgstr "Geben Sie eine durch Kommas getrennte Liste von Kalender-IDs ein:"
+
+#: private-google-calendars.php:1527
+msgid "Public calendar"
+msgstr "Öffentlicher Kalender"
+
+#: private-google-calendars.php:1522
+msgid "Note: no selection means all calendars."
+msgstr "Hinweis: keine Auswahl bedeutet alle Kalender."
+
+#: private-google-calendars.php:1510
+msgid "No private calendars"
+msgstr "Keine privaten Kalender"
+
+#: private-google-calendars.php:1508
+msgid "Private calendars"
+msgstr "Private Kalender"
+
+#: private-google-calendars.php:1041
+msgid "Set to 0 to disable cache."
+msgstr "Auf 0 setzen, um den Cache zu deaktivieren."
+
+#: private-google-calendars.php:1027
+msgid "Setup your public calendars here to display a title and background color. This is optional."
+msgstr "Hier können Sie Ihre öffentlichen Kalender so einrichten, dass ein Titel und eine Hintergrundfarbe angezeigt werden. Dies ist optional."
+
+#: private-google-calendars.php:1005
+msgid "Delete"
+msgstr "Löschen"
+
+#: private-google-calendars.php:1005
+msgid "Color"
+msgstr "Farbe"
+
+#: private-google-calendars.php:1005
+msgid "Title"
+msgstr "Titel"
+
+#: private-google-calendars.php:1005
+msgid "Calendar ID"
+msgstr "Kalender ID"
+
+#: private-google-calendars.php:1003
+msgid "Public calendars"
+msgstr "Öffentliche Kalender"
+
+#: private-google-calendars.php:994
+msgid "If you only want to display public calendars, an API key is all you need."
+msgstr "Wenn Sie nur öffentliche Kalender anzeigen möchten, benötigen Sie lediglich einen API-Schlüssel."
+
+#: private-google-calendars.php:989
+msgid "API key"
+msgstr "API-Schlüssel"
+
+#: private-google-calendars.php:957
+msgid "Access to public calendars require an API key."
+msgstr "Für den Zugang zu öffentlichen Kalendern ist ein API-Schlüssel erforderlich."
+
+#: private-google-calendars.php:949
+msgid "Settings for both private and public calendars."
+msgstr "Einstellungen für private und öffentliche Terminkalender."
+
+#: private-google-calendars.php:874
+msgid "Back"
+msgstr "Zurück"
+
+#: private-google-calendars.php:566
+msgid "Setting up private calendar access"
+msgstr "Privaten Kalenderzugang einrichten"
+
+#: private-google-calendars.php:316
+msgid "Go to event"
+msgstr "Termin öffnen"
+
+#: private-google-calendars.php:315
+msgid "Created by"
+msgstr "Erstellt von"
+
+#: private-google-calendars.php:314
+msgid "All day"
+msgstr "Ganztägig"
+
+#: private-google-calendars.php:65 private-google-calendars.php:69
+msgid "Plugin settings"
+msgstr "Plugin-Einstellungen"
+
+#: private-google-calendars.php:603
+msgid "Save settings"
+msgstr "Einstellungen speichern"
+
+#: private-google-calendars.php:967
+msgid "Note: Create a new project in de Google developer console <strong>and make sure you set <code>%s</code> as the authorized redirect URI!</strong>"
+msgstr "Hinweis: Erstellen Sie ein neues Projekt in der Google-Entwicklerkonsole und <strong>stellen Sie sicher, dass Sie <code>%s</code> als autorisierten Redirect-URI festlegen!</strong>"
+
+#: private-google-calendars.php:1689
+msgid "Enter at least 1 public calendar ID if you select the option public calendar(s)."
+msgstr "Geben Sie mindestens 1 öffentliche Kalender-ID ein, wenn Sie die Option öffentliche(r) Kalender wählen."
+
+#: private-google-calendars.php:1645
+msgid "FullCalendar JSON config:"
+msgstr "FullCalendar JSON-Konfiguration:"
+
+#: private-google-calendars.php:1534
+msgid "Show public calendar"
+msgstr "Öffentliche Kalender anzeigen"
+
+#: private-google-calendars.php:629
+msgid "Use this when you add or remove calendars in your Google account."
+msgstr "Benutzen Sie diese Funktion, wenn Sie Kalender in Ihrem Google-Konto hinzufügen oder entfernen."
+
+#: private-google-calendars.php:576
+msgid "Stop"
+msgstr "Stopp"
+
+#: private-google-calendars.php:551
+msgid "See the <a class=\"pgc-link\" href=\"https://blog.michielvaneerd.nl/private-google-calendars/\" target=\"_blank\">website</a> for information."
+msgstr "Informationen finden Sie auf der <a class=\"pgc-link\" href=\"https://blog.michielvaneerd.nl/private-google-calendars/\" target=\"_blank\">Webseite</a>."
+
+#: private-google-calendars.php:1629
+msgid "Show creator in popup"
+msgstr "Ersteller im Popup anzeigen"
+
+#: private-google-calendars.php:1622
+msgid "Show calendar name in popup"
+msgstr "Kalendername im Popup anzeigen"
+
+#: private-google-calendars.php:1615
+msgid "Show attendees in popup"
+msgstr "Teilnehmer im Popup anzeigen"
+
+#: private-google-calendars.php:1608
+msgid "Show attachments in popup"
+msgstr "Anhänge im Popup anzeigen"
+
+#: private-google-calendars.php:1601
+msgid "Show location in popup"
+msgstr "Standort im Popup anzeigen"
+
+#: private-google-calendars.php:1594
+msgid "Show description in popup"
+msgstr "Beschreibung im Popup anzeigen"
+
+#: private-google-calendars.php:1587
+msgid "Show link to event in popup"
+msgstr "Link zum Termin im Popup anzeigen"
+
+#: private-google-calendars.php:1567
+msgid "Hide future events..."
+msgstr "Künftige Ereignisse ausblenden..."
+
+#: private-google-calendars.php:1557
+msgid "Hide passed events..."
+msgstr "Vergangene Ereignisse ausblenden..."
+
+#. Author URI of the plugin
+msgid "http://michielvaneerd.nl/"
+msgstr "http://michielvaneerd.nl/"
+
+#. Author of the plugin
+msgid "Michiel van Eerd"
+msgstr "Michiel van Eerd"
+
+#. Description of the plugin
+msgid "Display multiple private Google Calendars"
+msgstr "Mehrere private Google-Kalender anzeigen"
+
+#. Plugin URI of the plugin
+msgid "http://blog.michielvaneerd.nl/private-google-calendars/"
+msgstr "http://blog.michielvaneerd.nl/private-google-calendars/"
+
+#: private-google-calendars.php:1683
+msgid "Invalid JSON. Solve it before saving."
+msgstr "Ungültiges JSON. Beheben Sie das Problem vor dem Speichern."
+
+#: private-google-calendars.php:1653
+msgid "See for config options the <a target=\"__blank\" href=\"%s\">FullCalendar docs</a>."
+msgstr "Konfigurationsoptionen finden Sie in der <a target=\"__blank\" href=\"%s\">FullCalendar-Dokumentation</a>."
+
+#: private-google-calendars.php:1580
+msgid "Show event popup"
+msgstr "Ereignis-Popup anzeigen"
+
+#: private-google-calendars.php:1548
+msgid "Show calendar filter"
+msgstr "Kalenderfilter anzeigen"
+
+#: private-google-calendars.php:1343 private-google-calendars.php:1344
+msgid "Private Google Calendars Widget"
+msgstr "Private Google Calendars Widget"
+
+#: private-google-calendars.php:1135
+msgid "No calendars yet."
+msgstr "Noch keine Kalender vorhanden."
+
+#: private-google-calendars.php:1036
+msgid "Cache time in minutes"
+msgstr "Cachezeit in Minuten"
+
+#: private-google-calendars.php:1076
+msgid "Select calendars"
+msgstr "Kalender auswählen"
+
+#: private-google-calendars.php:1067
+msgid "Upload client secret"
+msgstr "Client-Secret hochladen"
+
+#: private-google-calendars.php:895
+msgid "Unknown error format"
+msgstr "Unbekanntes Fehler-Format"
+
+#: private-google-calendars.php:876
+msgid "Unknown error"
+msgstr "Unbekannter Fehler"
+
+#: private-google-calendars.php:670
+msgid "Removes all saved plugin data.<br>If you have authorized this plugin access to your calendars, manually revoke access on the Google <a href=\"%s\" target=\"__blank\">Permissions</a> page."
+msgstr "Entfernt alle gespeicherten Plugin-Daten.<br>Wenn Sie diesem Plugin den Zugriff auf Ihre Kalender erlaubt haben, widerrufen Sie den Zugriff manuell auf der Google <a href=\"%s\" target=\"__blank\">Berechtigungen</a> Seite."
+
+#: private-google-calendars.php:669 private-google-calendars.php:673
+msgid "Remove plugin data"
+msgstr "Plugin-Daten entfernen"
+
+#: private-google-calendars.php:663
+msgid "Revoke this plugins access to your private calendars."
+msgstr "Dem Plugin den Zugang zu Ihren privaten Kalendern entziehen."
+
+#: private-google-calendars.php:662 private-google-calendars.php:666
+msgid "Revoke access"
+msgstr "Zugang widerrufen"
+
+#: private-google-calendars.php:657
+msgid "Cache is empty."
+msgstr "Der Cache ist leer."
+
+#: private-google-calendars.php:655
+msgid "Remove cache"
+msgstr "Cache löschen"
+
+#: private-google-calendars.php:651
+msgid "Remove cached calendar events."
+msgstr "Zwischengespeicherte Kalenderereignisse löschen."
+
+#: private-google-calendars.php:642
+msgid "Cache"
+msgstr "Cache"
+
+#: private-google-calendars.php:636
+msgid "Verify if have setup everything correctly."
+msgstr "Verifizieren Sie, ob Sie alles richtig eingerichtet haben."
+
+#: private-google-calendars.php:635 private-google-calendars.php:639
+msgid "Verify"
+msgstr "Verifizieren"
+
+#: private-google-calendars.php:628 private-google-calendars.php:632
+msgid "Update calendars"
+msgstr "Kalender aktualisieren"
+
+#: private-google-calendars.php:624
+msgid "Tools"
+msgstr "Werkzeuge"
+
+#: private-google-calendars.php:572
+msgid "Authorize"
+msgstr "Autorisieren"
+
+#: private-google-calendars.php:568
+msgid "Step 2: Authorize"
+msgstr "Schritt 2: Autorisieren"
+
+#: private-google-calendars.php:567
+msgid "Step 1: Upload client secret"
+msgstr "Schritt 1: Client-Secret hochladen"
+
+#: private-google-calendars.php:36
+msgid "No selected calendars"
+msgstr "Keine Kalender ausgewählt"
+
+#: private-google-calendars.php:35
+msgid "No calendars"
+msgstr "Keine Kalender"
+
+#: private-google-calendars.php:34
+msgid "Invalid format"
+msgstr "Fehlerhaftes Format"
+
+#: private-google-calendars.php:33
+msgid "URI <code>%s</code> missing in the client secret file. Adjust your Google project and upload the new client secret file."
+msgstr "URI <code>%s</code> fehlt in der Client-Secret-Datei. Passen Sie Ihr Google-Projekt an und laden Sie die neue Client-Secret-Datei hoch."
+
+#: private-google-calendars.php:32
+msgid "No access and refresh tokens."
+msgstr "Keine Zugangs- und Aktualisierungs-Tokens."
+
+#: private-google-calendars.php:31
+msgid "Your refresh token is missing!<br><br>This can only be solved by manually revoking this plugin&#39;s access in the Google <a target=\"__blank\" href=\"%s\">Permissions</a> page and remove all plugin data."
+msgstr "Ihr Aktualisierungs-Token fehlt!<br><br>Dies kann nur gelöst werden, indem Sie den Zugriff auf dieses Plugin auf der Google <a target=\"__blank\" href=\"%s\">Berechtigungsseite</a> manuell widerrufen und alle Plugin-Daten entfernen."
+
+#: private-google-calendars.php:30
+msgid "No access token."
+msgstr "Kein Zugangstoken."
+
+#: private-google-calendars.php:29
+msgid "Invalid client secret."
+msgstr "Fehlerhaftes Client-Secret"
+
+#: private-google-calendars.php:28
+msgid "No client secret."
+msgstr "Kein Client Secret vorhanden."
+
+#: private-google-calendars.php:26
+msgid "Cache deleted."
+msgstr "Cache gelöscht."
+
+#: private-google-calendars.php:25
+msgid "Calendars updated."
+msgstr "Kalender aktualisiert."
+
+#: private-google-calendars.php:24
+msgid "Plugin data removed. Make sure to also manually revoke access to your calendars in the Google <a target=\"__blank\" href=\"%s\">Permissions</a> page!"
+msgstr "Plugin-Daten entfernt. Stellen Sie sicher, dass Sie den Zugriff auf Ihre Kalender auch manuell auf der Google <a target=\"__blank\" href=\"%s\">Berechtigungsseite</a> widerrufen!"
+
+#: private-google-calendars.php:23
+msgid "Access revoked. This plugin does not have access to your calendars anymore."
+msgstr "Zugriff widerrufen. Dieses Plugin hat keinen Zugang mehr zu Ihren Kalendern."
+
+#: private-google-calendars.php:22
+msgid "Verify OK!"
+msgstr "Verifizierung OK!"
+
+#. Plugin Name of the plugin
+#: private-google-calendars.php:20
+msgid "Private Google Calendars"
+msgstr "Private Google Calendars"
