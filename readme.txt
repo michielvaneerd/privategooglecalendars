@@ -2,7 +2,7 @@
 Contributors: michielve
 Tags: calendar, google
 Requires at least: 4.6
-Tested up to: 6.4.3
+Tested up to: 6.6.2
 Requires PHP: 5.4.0
 Stable tag: trunk
 License: GPLv2 or later
@@ -91,6 +91,9 @@ wordpress/wp-content/plugins/private-google-calendars/lib/fullcalendar4/timegrid
 
 
 == Changelog ==
+
+= 20241103 =
+* Updated FullCalendar and some other packages.
 
 = 20240106 =
 * Escape attributes during output.
