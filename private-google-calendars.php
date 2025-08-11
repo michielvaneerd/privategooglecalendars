@@ -3,7 +3,7 @@
 Plugin Name: Private Google Calendars
 Description: Display multiple private Google Calendars
 Plugin URI: http://blog.michielvaneerd.nl/private-google-calendars/
-Version: 20241103
+Version: 20250811
 Author: Michiel van Eerd
 Author URI: http://michielvaneerd.nl/
 License: GPL2
@@ -12,7 +12,7 @@ Domain Path: /languages
 */
 
 // Always set this to the same version as "Version" in header! Used for query parameters added to style and scripts.
-define('PGC_PLUGIN_VERSION', '20241103');
+define('PGC_PLUGIN_VERSION', '20250811');
 
 if (!defined('PGC_THEMES_DIR_NAME')) {
   define('PGC_THEMES_DIR_NAME', 'pgc_themes');
@@ -423,7 +423,6 @@ function pgc_shortcode($atts = [])
     . esc_attr($userEventCalendarname) . '\' data-hidefuture=\'' . esc_attr($userHideFuture) . '\' data-hidepassed=\''
     . esc_attr($userHidePassed) . '\' data-config=\'' . esc_attr(json_encode($userConfig)) . '\' data-locale="'
     . get_locale() . '" data-theme="' . esc_attr($activeTheme) . '" class="pgc-calendar"></div>' . ($userFilter === 'bottom' ? $filterHTML : '') . '</div>';
-
 }
 
 /**
@@ -1326,8 +1325,7 @@ function pgc_settings_init()
   add_settings_section(
     'pgc_settings_section_public',
     __('Public calendar settings', 'private-google-calendars'),
-    function () {
-    }, // leeg
+    function () {}, // leeg
     'pgc'
   ); // page, slug
 
@@ -1540,9 +1538,7 @@ function pgc_validate_selected_calendar_ids($input)
 /**
  * Empty callback function
  */
-function pgc_settings_empty_cb()
-{
-}
+function pgc_settings_empty_cb() {}
 
 /**
  * Callback function to show calendar list checkboxes in admin.
