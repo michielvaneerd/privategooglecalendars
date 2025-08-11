@@ -1,0 +1,49 @@
+version: '3.3'
+
+services:
+  db:
+    image: mariadb
+    # connect from host with:
+    # mysql -hlocalhost -P3306 --protocol=tcp -uwordpress -p
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+      - "8000:80"
+    restart: always
+    volumes:
+      # Because the Wordpress Docker image creates an anonymous volume, we bind it here, so it doesn't get created everytime we do a docker-compose up.
+      - wp:/var/www/html
+      # This only mounts the current working dir to the WP plugin dir.
+      # This means that all other WP files are copied everytime after docker-compose down.
+      - ./:/var/www/html/wp-content/plugins/private-google-calendars
+      # Remove dev dirs from the mount.
+      - src:/var/www/html/wp-content/plugins/private-google-calendars/src/
+      - node_modules:/var/www/html/wp-content/plugins/private-google-calendars/node_modules/
+      - node_modules_lib:/var/www/html/wp-content/plugins/private-google-calendars/lib/node_modules/
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    #extra_hosts:
+      # Map the used hostname to the IP only for Multipass
+    #  - "app.local.com:172.17.0.1"
+volumes:
+  db_data: {}
+  wp: {}
+  src: {}
+  node_modules: {}
+  node_modules_lib: {}

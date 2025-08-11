@@ -1,0 +1,127 @@
+/*
+The class .pgc-theme-redbrown is attached to the root .pgc-calendar-wrapper element, so this can be used to style the calendar.
+*/
+
+.pgc-calendar-wrapper.pgc-theme-redbrown {
+    padding: 1rem;
+    color: #FFFFFF;
+}
+
+.pgc-calendar-wrapper.pgc-theme-redbrown {
+    background-color: #AA3939;
+}
+
+/* .pgc-calendar-wrapper.pgc-theme-dark .fc .fc-toolbar-title {
+    font-size: 1.4rem;
+} */
+
+/* .pgc-calendar-wrapper.pgc-theme-dark .fc .fc-button,
+.pgc-calendar-wrapper.pgc-theme-dark .fc .fc-button .fc-icon,
+.pgc-calendar-wrapper.pgc-theme-dark .fc-popover-header {
+    font-size: 1rem;
+} */
+
+/* .pgc-calendar-wrapper.pgc-theme-dark table.fc-list-table,
+.pgc-calendar-wrapper.pgc-theme-dark .fc-dayGridMonth-view .fc-daygrid-event,
+.pgc-calendar-wrapper.pgc-theme-dark .fc-timeGridWeek-view .fc-daygrid-event,
+.pgc-calendar-wrapper.pgc-theme-dark .fc-timegrid-event,
+.pgc-calendar-wrapper.pgc-theme-dark .fc-daygrid-day-number,
+.pgc-calendar-wrapper.pgc-theme-dark .fc-col-header-cell,
+.pgc-calendar-wrapper.pgc-theme-dark .fc-daygrid-more-link,
+.pgc-calendar-wrapper.pgc-theme-dark .fc-timegrid-slot-label-cushion.fc-scrollgrid-shrink-cushion,
+.pgc-calendar-wrapper.pgc-theme-dark .fc-timegrid-axis-cushion.fc-scrollgrid-shrink-cushion.fc-scrollgrid-sync-inner,
+.pgc-calendar-wrapper.pgc-theme-dark .fc-daygrid-event-harness  {
+    font-size: .8rem;
+} */
+
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc a,
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc-toolbar-title,
+.pgc-calendar-wrapper.pgc-theme-redbrown .pgc-calendar-filter-wrapper label,
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc-list-event,
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc-popover-header {
+    color: #FFFFFF;
+}
+
+/* .pgc-calendar-wrapper.pgc-theme-dark .fc .fc-day-other .fc-daygrid-day-top {
+    opacity: .6;
+} */
+
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc .fc-daygrid-day.fc-day-today,
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc .fc-timegrid-col.fc-day-today {
+    background-color: #801515;
+}
+
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc-theme-standard .fc-list-day-cushion {
+    background-color: #550000;
+}
+
+.pgc-calendar-wrapper.pgc-theme-redbrown tr.fc-list-event.fc-event:hover>td {
+    background-color: #801515 !important;
+}
+
+.pgc-calendar-wrapper.pgc-theme-redbrown tr.fc-list-event.fc-event:hover>td a {
+    color: white;
+}
+
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc .fc-button-primary {
+    background-color: #801515;
+    border-color: #801515;
+    color: white;
+}
+
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc .fc-button-primary:hover,
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc .fc-button-primary:active,
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc .fc-button-primary:focus {
+    background-color: #550000 !important;
+    border-color: #550000;
+    color: white;
+}
+
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc .fc-button-primary:not(:disabled).fc-button-active,
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc .fc-button-primary:not(:disabled):active {
+    background-color: #550000 !important;
+    border-color: #550000;
+    color: white;
+}
+
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc .fc-button-primary:active,
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc .fc-button-primary:focus {
+    outline: 2px solid #D46A6A;
+}
+
+.pgc-calendar-wrapper.pgc-theme-redbrown .fc .fc-button-primary:disabled {
+    background-color: #550000 !important;
+    border-color: #550000;
+    color: white;
+    opacity: .4;
+}
+
+.tippy-box[data-theme~='redbrown'] {
+    background-color: #D46A6A;
+    color: #550000;
+    box-shadow: 0 0 20px 4px rgb(154 161 177 / 15%), 0 4px 80px -8px rgb(36 40 47 / 25%), 0 4px 4px -2px rgb(91 94 105 / 15%);
+}
+
+.tippy-box[data-theme~='redbrown'][data-placement^='top']>.tippy-arrow::before {
+    border-top-color: #D46A6A;
+}
+
+.tippy-box[data-theme~='redbrown'][data-placement^='bottom']>.tippy-arrow::before {
+    border-bottom-color: #D46A6A;
+}
+
+.tippy-box[data-theme~='redbrown'][data-placement^='left']>.tippy-arrow::before {
+    border-left-color: #D46A6A;
+}
+
+.tippy-box[data-theme~='redbrown'][data-placement^='right']>.tippy-arrow::before {
+    border-right-color: #D46A6A;
+}
+
+.tippy-box[data-theme~='redbrown'] .tippy-content {
+    padding:2rem;
+}
+
+.tippy-box[data-theme~='redbrown'] .pgc-popup-draghandle {
+    display: none;
+}

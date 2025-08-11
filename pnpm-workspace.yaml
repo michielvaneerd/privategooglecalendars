@@ -1,0 +1,7 @@
+packages:
+  - 'lib'
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - core-js
+  - core-js-pure

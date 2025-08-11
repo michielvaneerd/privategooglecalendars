@@ -1,0 +1,69 @@
+.pgc-list {
+  list-style-type:circle;
+}
+
+.pgc-errors {
+  color:red;
+}
+
+a.pgc-link {
+  text-decoration: underline;
+  cursor:pointer;
+}
+
+.pgc-calendar-filter input[type=checkbox]:focus + label span,
+.pgc-calendar-filter input[type=checkbox]:active + label span {
+  outline: 1px dashed black;
+}
+
+.pgc-calendar-filter input[type=checkbox] {
+  opacity:0; /* display:none and visibility:hidden are not accessible */
+  position:absolute; /* remove from document flow */
+}
+
+.pgc-calendar-color {
+  width:1rem;
+  height:1rem;
+  padding:0 .2rem;
+  opacity:.4;
+}
+
+.pgc-calendar-filter input[type=checkbox]:checked + label span {
+  opacity:1;
+}
+
+.pgc-calendar-filter input[type=checkbox] + label span:before {
+  content: "✔";
+  line-height:1rem;
+  visibility:hidden;
+}
+
+.pgc-calendar-filter input[type=checkbox]:checked + label span:before {
+  visibility: visible;
+}
+
+.pgc_small_numeric_input {
+  width:60px;
+}
+
+.pgc-calendar-codearea {
+  font-family: monospace;
+}
+
+.pgc-calendar-widget-row {
+  display:block;
+  margin-bottom:.1rem;
+}
+
+.pgc-notice {
+  background-color: sandybrown;
+  padding: 1rem;
+}
+
+.pgc-public-calendar-table td, .pgc-public-calendar-table th {
+  padding:0;
+}
+
+.pgc-copy-text {
+  cursor: pointer;
+}

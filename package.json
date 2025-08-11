@@ -1,0 +1,32 @@
+{
+  "name": "private-google-calendars-git",
+  "version": "1.0.0",
+  "description": "=== Private Google Calendars === Contributors: michielve Tags: calendar, google Requires at least: 4.6 Tested up to: 5.3 Requires PHP: 5.4.0 Stable tag: trunk License: GPLv2 or later License URI: https://www.gnu.org/licenses/gpl-2.0.html",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michielvaneerd/privategooglecalendars.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michielvaneerd/privategooglecalendars/issues"
+  },
+  "homepage": "https://github.com/michielvaneerd/privategooglecalendars#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^30.21.0"
+  },
+  "dependencies": {
+    "@wordpress/icons": "^10.28.0"
+  },
+  "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748"
+}

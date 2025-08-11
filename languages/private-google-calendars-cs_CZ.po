@@ -1,0 +1,478 @@
+# Translation of Plugins - Private Google Calendars - Development (trunk) in Czech
+# This file is distributed under the same license as the Plugins - Private Google Calendars - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: +0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: GlotPress/3.0.0-alpha\n"
+"Language: cs_CZ\n"
+"Project-Id-Version: Plugins - Private Google Calendars - Development (trunk)\n"
+
+#: private-google-calendars.php:1008
+msgid "Private calendar settings"
+msgstr "Nastavení soukromého kalendáře"
+
+#: private-google-calendars.php:1000
+msgid "Public calendar settings"
+msgstr "Nastavení veřejného kalendáře"
+
+#: private-google-calendars.php:992
+msgid "General settings"
+msgstr "Obecné nastavení"
+
+#: private-google-calendars.php:150
+msgid "Comma separated list of public calendar IDs"
+msgstr "Seznam veřejných ID kalendářů oddělených čárkami"
+
+#: private-google-calendars.php:149
+msgid "Copy default FullCalendar config"
+msgstr "Zkopírujte výchozí konfiguraci FullCalendar"
+
+#: private-google-calendars.php:148
+msgid "FullCalendar config"
+msgstr "FullCalendar config"
+
+#: private-google-calendars.php:147
+msgid "Malformed JSON"
+msgstr "Malformed JSON"
+
+#: private-google-calendars.php:146
+msgid "Enter 1 or more public calendar IDs"
+msgstr "Zadejte 1 nebo více ID veřejného kalendáře"
+
+#: private-google-calendars.php:145
+msgid "Malformed JSON, this calendar will probably not display correctly"
+msgstr "Poškozený JSON, tento kalendář se pravděpodobně nebude zobrazovat správně"
+
+#: private-google-calendars.php:144
+msgid "days from now"
+msgstr "za několik dní"
+
+#: private-google-calendars.php:141
+msgid "Show calendarname"
+msgstr "Zobrazit název kalendáře"
+
+#: private-google-calendars.php:140
+msgid "Show event creator"
+msgstr "Zobrazit tvůrce události"
+
+#: private-google-calendars.php:139
+msgid "Show event attachments"
+msgstr "Zobrazit přílohy události"
+
+#: private-google-calendars.php:138
+msgid "Show event attendees"
+msgstr "Zobrazit účastníky akce"
+
+#: private-google-calendars.php:137
+msgid "Show event location"
+msgstr "Zobrazit místo události"
+
+#: private-google-calendars.php:136
+msgid "Show event description"
+msgstr "Zobrazit popis události"
+
+#: private-google-calendars.php:135
+msgid "Show event link"
+msgstr "Zobrazit odkaz na událost"
+
+#: private-google-calendars.php:133
+msgid "See the <a target=\"_blank\" href=\"https://fullcalendar.io/docs#toc\">FullCalendar documentation</a> for available configuration options."
+msgstr "Dostupné <a target=\"_blank\" href=\"https://fullcalendar.io/docs#toc\">možnosti konfigurace </a> naleznete v dokumentaci FullCalendar "
+
+#: private-google-calendars.php:132
+msgid "Copy the default FullCalendar config if you want to change it. This is the configuration object that you can set as the second argument in the <code>FullCalendar.Calendar</code> constructor."
+msgstr "Zkopírujte výchozí konfiguraci FullCalendar, pokud ji chcete změnit. Toto je konfigurační objekt, který můžete nastavit jako druhý argument ve konstruktoru <code> FullCalendar.Calendar </code>."
+
+#: private-google-calendars.php:131
+msgid "Hide"
+msgstr "Skrýt"
+
+#: private-google-calendars.php:130
+msgid "Show"
+msgstr "Ukázat"
+
+#: private-google-calendars.php:129
+msgid "Popup options"
+msgstr "Možnosti vyskakovacího okna"
+
+#: private-google-calendars.php:126
+msgid "Edit FullCalendar config"
+msgstr "Upravit konfiguraci FullCalendar"
+
+#: private-google-calendars.php:124
+msgid "Public calendar(s)"
+msgstr "Veřejný kalendář(e)"
+
+#: private-google-calendars.php:123
+msgid "Public"
+msgstr "Veřejnost"
+
+#: private-google-calendars.php:122
+msgid "All"
+msgstr "Všechno"
+
+#: private-google-calendars.php:121
+msgid "Selected calendars"
+msgstr "Vybrané kalendáře"
+
+#: private-google-calendars.php:1619
+msgid "Event popup options"
+msgstr "Nastavení popup události"
+
+#: private-google-calendars.php:1615
+msgid "from now"
+msgstr "od teď"
+
+#: private-google-calendars.php:143 private-google-calendars.php:1605
+msgid "days ago"
+msgstr "před pár dny"
+
+#: private-google-calendars.php:142 private-google-calendars.php:1603
+#: private-google-calendars.php:1613
+msgid "...more than"
+msgstr "...více než"
+
+#: private-google-calendars.php:120 private-google-calendars.php:1587
+msgid "Calendar options"
+msgstr "Možnosti kalendáře"
+
+#: private-google-calendars.php:1580
+msgid "Enter comma separated list of calendar ID's:"
+msgstr "Zadejte seznam ID kalendářů oddělených čárkami:"
+
+#: private-google-calendars.php:1572
+msgid "Public calendar"
+msgstr "Veřejný kalendář"
+
+#: private-google-calendars.php:1567
+msgid "Note: no selection means all calendars."
+msgstr "Poznámka: Žádný výběr znamená všechny kalendáře."
+
+#: private-google-calendars.php:1555
+msgid "No private calendars"
+msgstr "Žádné soukromé kalendáře"
+
+#: private-google-calendars.php:1553
+msgid "Private calendars"
+msgstr "Soukromé kalendáře"
+
+#: private-google-calendars.php:1086
+msgid "Set to 0 to disable cache."
+msgstr "Nastavením na 0 deaktivujete mezipaměť."
+
+#: private-google-calendars.php:1072
+msgid "Setup your public calendars here to display a title and background color. This is optional."
+msgstr "Nastavte zde své veřejné kalendáře, aby zobrazovaly název a barvu pozadí. To je volitelné."
+
+#: private-google-calendars.php:1050
+msgid "Delete"
+msgstr "Odstranit"
+
+#: private-google-calendars.php:1050
+msgid "Color"
+msgstr "Barva"
+
+#: private-google-calendars.php:1050
+msgid "Title"
+msgstr "Nadpis"
+
+#: private-google-calendars.php:1050
+msgid "Calendar ID"
+msgstr "ID kalendáře"
+
+#: private-google-calendars.php:1048
+msgid "Public calendars"
+msgstr "Veřejné kalendáře"
+
+#: private-google-calendars.php:1039
+msgid "If you only want to display public calendars, an API key is all you need."
+msgstr "Pokud chcete zobrazit pouze veřejné kalendáře, vše, co potřebujete je klíč API."
+
+#: private-google-calendars.php:1034
+msgid "API key"
+msgstr "API klíč"
+
+#: private-google-calendars.php:1002
+msgid "Access to public calendars require an API key."
+msgstr "Přístup k veřejným kalendářům vyžaduje klíč API."
+
+#: private-google-calendars.php:994
+msgid "Settings for both private and public calendars."
+msgstr "Nastavení pro soukromé i veřejné kalendáře."
+
+#: private-google-calendars.php:919
+msgid "Back"
+msgstr "Zpět"
+
+#: private-google-calendars.php:611
+msgid "Setting up private calendar access"
+msgstr "Nastavení přístupu k soukromému kalendáři"
+
+#: private-google-calendars.php:361
+msgid "Go to event"
+msgstr "Přejít na událost"
+
+#: private-google-calendars.php:360
+msgid "Created by"
+msgstr "Vytvořil"
+
+#: private-google-calendars.php:359
+msgid "All day"
+msgstr "Celý den"
+
+#: private-google-calendars.php:74 private-google-calendars.php:78
+msgid "Plugin settings"
+msgstr "Nastavení pluginu"
+
+#: private-google-calendars.php:648
+msgid "Save settings"
+msgstr "Uložit nastavení"
+
+#: private-google-calendars.php:1012
+msgid "Note: Create a new project in de Google developer console <strong>and make sure you set <code>%s</code> as the authorized redirect URI!</strong>"
+msgstr "Poznámka: Vytvořte nový projekt ve vývojářské konzoli Google <strong> a ujistěte se, že jste jako autorizované URI přesměrování nastavili <code>% s </code>! </strong>"
+
+#: private-google-calendars.php:1734
+msgid "Enter at least 1 public calendar ID if you select the option public calendar(s)."
+msgstr "Pokud vyberete možnost veřejného kalendáře, zadejte alespoň 1 ID veřejného kalendáře."
+
+#: private-google-calendars.php:1690
+msgid "FullCalendar JSON config:"
+msgstr ""
+
+#: private-google-calendars.php:1579
+msgid "Show public calendar"
+msgstr ""
+
+#: private-google-calendars.php:674
+msgid "Use this when you add or remove calendars in your Google account."
+msgstr "Tuto možnost použijte, když přidáváte nebo odebíráte kalendáře ve svém účtu Google."
+
+#: private-google-calendars.php:621
+msgid "Stop"
+msgstr "Stop"
+
+#: private-google-calendars.php:596
+msgid "See the <a class=\"pgc-link\" href=\"https://blog.michielvaneerd.nl/private-google-calendars/\" target=\"_blank\">website</a> for information."
+msgstr "Informace naleznete na<a class=\"pgc-link\" href=\"https://blog.michielvaneerd.nl/private-google-calendars/\" target=\"_blank\">webové stránce</a>"
+
+#: private-google-calendars.php:1674
+msgid "Show creator in popup"
+msgstr "Zobrazit jméno tvůrce ve vyskakovacím okně"
+
+#: private-google-calendars.php:1667
+msgid "Show calendar name in popup"
+msgstr "Zobrazit místní název kalendáře"
+
+#: private-google-calendars.php:1660
+msgid "Show attendees in popup"
+msgstr "Zobrazit účastníky ve vyskakovacím okně"
+
+#: private-google-calendars.php:1653
+msgid "Show attachments in popup"
+msgstr "Zobrazit přílohy ve vyskakovacím okně"
+
+#: private-google-calendars.php:1646
+msgid "Show location in popup"
+msgstr "Zobrazit lokalitu události ve vyskakovacím okně"
+
+#: private-google-calendars.php:1639
+msgid "Show description in popup"
+msgstr "Zobrazit popis ve vyskakovacím okně"
+
+#: private-google-calendars.php:1632
+msgid "Show link to event in popup"
+msgstr "Zobrazit odkaz na událost ve vyskakovacím okně"
+
+#: private-google-calendars.php:128 private-google-calendars.php:1612
+msgid "Hide future events..."
+msgstr "Skrýt budoucí události ..."
+
+#: private-google-calendars.php:127 private-google-calendars.php:1602
+msgid "Hide passed events..."
+msgstr "Skrýt předané události ..."
+
+#. Author URI of the plugin
+msgid "http://michielvaneerd.nl/"
+msgstr "http://michielvaneerd.nl/"
+
+#. Author of the plugin
+msgid "Michiel van Eerd"
+msgstr "Michiel van Eerd"
+
+#. Description of the plugin
+msgid "Display multiple private Google Calendars"
+msgstr "Zobrazit více soukromých Kalendářů Google"
+
+#. Plugin URI of the plugin
+msgid "http://blog.michielvaneerd.nl/private-google-calendars/"
+msgstr "http://blog.michielvaneerd.nl/private-google-calendars/"
+
+#: private-google-calendars.php:1728
+msgid "Invalid JSON. Solve it before saving."
+msgstr "Neplatný JSON. Vyřešte to před uložením."
+
+#: private-google-calendars.php:1698
+msgid "See for config options the <a target=\"__blank\" href=\"%s\">FullCalendar docs</a>."
+msgstr "Viz možnosti konfigurace, které dokumenty FullCalendar dokumentují."
+
+#: private-google-calendars.php:134 private-google-calendars.php:1625
+msgid "Show event popup"
+msgstr "Zobrazit vyskakovací okno události"
+
+#: private-google-calendars.php:125 private-google-calendars.php:1593
+msgid "Show calendar filter"
+msgstr "Zobrazit filtr kalendáře"
+
+#: private-google-calendars.php:1388 private-google-calendars.php:1389
+msgid "Private Google Calendars Widget"
+msgstr "Soukromý widget Kalendáře Google"
+
+#: private-google-calendars.php:1180
+msgid "No calendars yet."
+msgstr "Zatím žádné kalendáře"
+
+#: private-google-calendars.php:1081
+msgid "Cache time in minutes"
+msgstr "Čas mezipaměti v minutách"
+
+#: private-google-calendars.php:1121
+msgid "Select calendars"
+msgstr "Vyberte kalendáře"
+
+#: private-google-calendars.php:1112
+msgid "Upload client secret"
+msgstr "Nahrajte \"client secret\""
+
+#: private-google-calendars.php:940
+msgid "Unknown error format"
+msgstr "Neznámý formát chyby"
+
+#: private-google-calendars.php:921
+msgid "Unknown error"
+msgstr "Neznámá chyba"
+
+#: private-google-calendars.php:715
+msgid "Removes all saved plugin data.<br>If you have authorized this plugin access to your calendars, manually revoke access on the Google <a href=\"%s\" target=\"__blank\">Permissions</a> page."
+msgstr "Odebere všechna uložená data pluginu. <br> Pokud jste tomuto pluginu povolili přístup do kalendářů, zrušte přístup ručně na stránce <a href=\"%s\" target=\"__blank\"> Oprávnění </a> Google."
+
+#: private-google-calendars.php:714 private-google-calendars.php:718
+msgid "Remove plugin data"
+msgstr "Odebrat data pluginu"
+
+#: private-google-calendars.php:708
+msgid "Revoke this plugins access to your private calendars."
+msgstr "Zrušte přístup tohoto pluginu k soukromým kalendářům."
+
+#: private-google-calendars.php:707 private-google-calendars.php:711
+msgid "Revoke access"
+msgstr "Odebrat přístup"
+
+#: private-google-calendars.php:702
+msgid "Cache is empty."
+msgstr "Mezipaměť je prázdná."
+
+#: private-google-calendars.php:700
+msgid "Remove cache"
+msgstr "Odebrat mezipaměť"
+
+#: private-google-calendars.php:696
+msgid "Remove cached calendar events."
+msgstr "Odebrat události kalendáře v mezipaměti."
+
+#: private-google-calendars.php:687
+msgid "Cache"
+msgstr "Mezipaměť"
+
+#: private-google-calendars.php:681
+msgid "Verify if have setup everything correctly."
+msgstr "Ověřte, zda máte vše správně nastaveno."
+
+#: private-google-calendars.php:680 private-google-calendars.php:684
+msgid "Verify"
+msgstr "Ověřit"
+
+#: private-google-calendars.php:673 private-google-calendars.php:677
+msgid "Update calendars"
+msgstr "Aktualizujte kalendáře"
+
+#: private-google-calendars.php:669
+msgid "Tools"
+msgstr ""
+
+#: private-google-calendars.php:617
+msgid "Authorize"
+msgstr "Povolit"
+
+#: private-google-calendars.php:613
+msgid "Step 2: Authorize"
+msgstr "Krok 2: Autorizace"
+
+#: private-google-calendars.php:612
+msgid "Step 1: Upload client secret"
+msgstr "Krok 1: Nahrajte \"client secret\""
+
+#: private-google-calendars.php:46
+msgid "No selected calendars"
+msgstr "Žádné vybrané kalendáře"
+
+#: private-google-calendars.php:45
+msgid "No calendars"
+msgstr "Žádné kalendáře"
+
+#: private-google-calendars.php:44
+msgid "Invalid format"
+msgstr "Nesprávný formát"
+
+#: private-google-calendars.php:43
+msgid "URI <code>%s</code> missing in the client secret file. Adjust your Google project and upload the new client secret file."
+msgstr "URI <code>% s </code> chybí v souboru \"client secret\". Upravte svůj projekt Google a nahrajte nový soubor \"client secret\"."
+
+#: private-google-calendars.php:42
+msgid "No access and refresh tokens."
+msgstr "Žádný přístupový a obnovovací tokeny."
+
+#: private-google-calendars.php:41
+msgid "Your refresh token is missing!<br><br>This can only be solved by manually revoking this plugin&#39;s access in the Google <a target=\"__blank\" href=\"%s\">Permissions</a> page and remove all plugin data."
+msgstr "Chybí váš obnovovací token. <br><br> To lze vyřešit pouze ručním odvoláním přístupu tohoto plugin&#39;s na stránce Google v části <a target=\"__blank\" href=\"%s\"> Oprávnění </a> a odebráním všech dat pluginu."
+
+#: private-google-calendars.php:40
+msgid "No access token."
+msgstr "Žádný přístupový token."
+
+#: private-google-calendars.php:39
+msgid "Invalid client secret."
+msgstr "Neplatný \"client secret\"."
+
+#: private-google-calendars.php:38
+msgid "No client secret."
+msgstr "Žádné \"client secret\"."
+
+#: private-google-calendars.php:36
+msgid "Cache deleted."
+msgstr "Mezipaměť byla vyčistěna."
+
+#: private-google-calendars.php:35
+msgid "Calendars updated."
+msgstr "Kalendáře byly aktualizovány."
+
+#: private-google-calendars.php:34
+msgid "Plugin data removed. Make sure to also manually revoke access to your calendars in the Google <a target=\"__blank\" href=\"%s\">Permissions</a> page!"
+msgstr "Data pluginu byla odstraněna. Nezapomeňte také ručně odvolat přístup ke svým kalendářům na <a target=\"__blank\" href=\"%s\"> Oprávnění </a> stránce Google!"
+
+#: private-google-calendars.php:33
+msgid "Access revoked. This plugin does not have access to your calendars anymore."
+msgstr "Přístup byl zrušen. Tento plugin již nemá přístup k vašim kalendářům."
+
+#: private-google-calendars.php:32
+msgid "Verify OK!"
+msgstr "Ověření proběhlo v pořádku!"
+
+#. Plugin Name of the plugin
+#: private-google-calendars.php:30
+msgid "Private Google Calendars"
+msgstr "Soukromé Kalendáře Google"

@@ -1,0 +1,56 @@
+
+
+/* .pgc-calendar-wrapper.pgc-theme-pgc-dark .fc .fc-toolbar-title {
+    font-size: 1.4rem;
+} */
+
+/* .pgc-calendar-wrapper.pgc-theme-pgc-dark .fc .fc-button,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc .fc-button .fc-icon,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc-popover-header {
+    font-size: 1rem;
+} */
+
+.pgc-calendar-wrapper.pgc-theme-pgc-dark {
+    padding: 1rem;
+    background-color: black;
+    /* border-radius: .2rem; */
+}
+
+/* .pgc-calendar-wrapper.pgc-theme-pgc-dark table.fc-list-table,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc-dayGridMonth-view .fc-daygrid-event,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc-timeGridWeek-view .fc-daygrid-event,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc-timegrid-event,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc-daygrid-day-number,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc-col-header-cell,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc-daygrid-more-link,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc-timegrid-slot-label-cushion.fc-scrollgrid-shrink-cushion,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc-timegrid-axis-cushion.fc-scrollgrid-shrink-cushion.fc-scrollgrid-sync-inner,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc-daygrid-event-harness  {
+    font-size: .8rem;
+} */
+
+/* Colors, maybe better to leave this alone (users can override it in WP admin if they want) */
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc a,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc-toolbar-title,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .pgc-calendar-filter-wrapper label,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc-list-event,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc-popover-header {
+    color: white;
+}
+
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc .fc-day-other .fc-daygrid-day-top {
+    opacity: .6;
+}
+
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc .fc-daygrid-day.fc-day-today,
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc .fc-timegrid-col.fc-day-today {
+    background-color: #666;
+}
+
+.pgc-calendar-wrapper.pgc-theme-pgc-dark .fc-theme-standard .fc-list-day-cushion {
+    background-color: #2C3E50;
+}
+
+.pgc-calendar-wrapper.pgc-theme-pgc-dark tr.fc-list-event.fc-event:hover > td {
+    background-color: #666 !important;
+}

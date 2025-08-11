@@ -1,0 +1,64 @@
+/* .pgc-calendar-wrapper.pgc-theme-pgc-light .fc .fc-toolbar-title {
+    font-size: 1.4rem;
+} */
+
+/* .pgc-calendar-wrapper.pgc-theme-pgc-light .fc .fc-button,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc .fc-button .fc-icon,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc-popover-header {
+    font-size: 1rem;
+} */
+
+.pgc-calendar-wrapper.pgc-theme-pgc-light {
+    padding: 1rem;
+    background-color: white;
+    /* border-radius: .2rem; */
+}
+
+/* .pgc-calendar-wrapper.pgc-theme-pgc-light table.fc-list-table,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc-dayGridMonth-view .fc-daygrid-event,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc-timeGridWeek-view .fc-daygrid-event,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc-timegrid-event,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc-daygrid-day-number,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc-col-header-cell,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc-daygrid-more-link,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc-timegrid-slot-label-cushion.fc-scrollgrid-shrink-cushion,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc-timegrid-axis-cushion.fc-scrollgrid-shrink-cushion.fc-scrollgrid-sync-inner,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc-daygrid-event-harness  {
+    font-size: .8rem;
+} */
+
+/* Colors, maybe better to leave this alone (users can override it in WP admin if they want) */
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc a,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc-toolbar-title,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .pgc-calendar-filter-wrapper label,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc-list-event,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc-popover-header {
+    color: #606060;
+}
+
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc .fc-daygrid-day.fc-day-today,
+.pgc-calendar-wrapper.pgc-theme-pgc-light .fc .fc-timegrid-col.fc-day-today {
+    background-color: #F0F0F0;
+}
+
+.tippy-box[data-theme~='pgc-light'] {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 20px 4px rgb(154 161 177 / 15%), 0 4px 80px -8px rgb(36 40 47 / 25%), 0 4px 4px -2px rgb(91 94 105 / 15%);
+}
+
+.tippy-box[data-theme~='pgc-light'][data-placement^='top']>.tippy-arrow::before {
+    border-top-color: white;
+}
+
+.tippy-box[data-theme~='pgc-light'][data-placement^='bottom']>.tippy-arrow::before {
+    border-bottom-color: white;
+}
+
+.tippy-box[data-theme~='pgc-light'][data-placement^='left']>.tippy-arrow::before {
+    border-left-color: white;
+}
+
+.tippy-box[data-theme~='pgc-light'][data-placement^='right']>.tippy-arrow::before {
+    border-right-color: white;
+}
