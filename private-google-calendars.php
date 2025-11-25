@@ -824,13 +824,15 @@ function pgc_get_calendars_by_key($calendarIds)
 add_action('admin_menu', 'pgc_settings_page');
 function pgc_settings_page()
 {
-  $page = add_options_page(
-    PGC_PLUGIN_NAME,
-    PGC_PLUGIN_NAME,
-    'manage_options',
-    'pgc',
-    'pgc_settings_page_html'
-  );
+  if (current_user_can('manage_options')) {
+    $page = add_options_page(
+      PGC_PLUGIN_NAME,
+      PGC_PLUGIN_NAME,
+      'manage_options',
+      'pgc',
+      'pgc_settings_page_html'
+    );
+  }
 }
 
 /**
@@ -1007,24 +1009,26 @@ function pgc_sort_calendars(&$items)
 add_action('admin_post_pgc_calendarlist', 'pgc_admin_post_calendarlist');
 function pgc_admin_post_calendarlist()
 {
-  try {
-    $client = getGoogleClient(true);
-    if ($client->isAccessTokenExpired()) {
-      if (!$client->getRefreshToken()) {
-        throw new Exception(PGC_ERRORS_REFRESH_TOKEN_MISSING);
+  if (current_user_can('manage_options')) {
+    try {
+      $client = getGoogleClient(true);
+      if ($client->isAccessTokenExpired()) {
+        if (!$client->getRefreshToken()) {
+          throw new Exception(PGC_ERRORS_REFRESH_TOKEN_MISSING);
+        }
+        $client->refreshAccessToken();
       }
-      $client->refreshAccessToken();
+      $service = new PGC_GoogleCalendarClient($client);
+      $items = $service->getCalendarList(PGC_CALENDARS_MAX_RESULTS);
+
+      pgc_sort_calendars($items);
+
+      update_option('pgc_calendarlist', getPrettyJSONString($items), false);
+      pgc_add_notice(PGC_NOTICES_CALENDARLIST_UPDATE_SUCCESS, 'success', true);
+      exit;
+    } catch (Exception $ex) {
+      pgc_die($ex);
     }
-    $service = new PGC_GoogleCalendarClient($client);
-    $items = $service->getCalendarList(PGC_CALENDARS_MAX_RESULTS);
-
-    pgc_sort_calendars($items);
-
-    update_option('pgc_calendarlist', getPrettyJSONString($items), false);
-    pgc_add_notice(PGC_NOTICES_CALENDARLIST_UPDATE_SUCCESS, 'success', true);
-    exit;
-  } catch (Exception $ex) {
-    pgc_die($ex);
   }
 }
 
@@ -1034,21 +1038,23 @@ function pgc_admin_post_calendarlist()
 add_action('admin_post_pgc_colorlist', 'pgc_admin_post_colorlist');
 function pgc_admin_post_colorlist()
 {
-  try {
-    $client = getGoogleClient(true);
-    if ($client->isAccessTokenExpired()) {
-      if (!$client->getRefreshToken()) {
-        throw new Exception(PGC_ERRORS_REFRESH_TOKEN_MISSING);
+  if (current_user_can('manage_options')) {
+    try {
+      $client = getGoogleClient(true);
+      if ($client->isAccessTokenExpired()) {
+        if (!$client->getRefreshToken()) {
+          throw new Exception(PGC_ERRORS_REFRESH_TOKEN_MISSING);
+        }
+        $client->refreshAccessToken();
       }
-      $client->refreshAccessToken();
+      $service = new PGC_GoogleCalendarClient($client);
+      $items = $service->getColorList();
+      update_option('pgc_colorlist', getPrettyJSONString($items), false);
+      pgc_add_notice(PGC_NOTICES_COLORLIST_UPDATE_SUCCESS, 'success', true);
+      exit;
+    } catch (Exception $ex) {
+      pgc_die($ex);
     }
-    $service = new PGC_GoogleCalendarClient($client);
-    $items = $service->getColorList();
-    update_option('pgc_colorlist', getPrettyJSONString($items), false);
-    pgc_add_notice(PGC_NOTICES_COLORLIST_UPDATE_SUCCESS, 'success', true);
-    exit;
-  } catch (Exception $ex) {
-    pgc_die($ex);
   }
 }
 
@@ -1058,9 +1064,11 @@ function pgc_admin_post_colorlist()
 add_action('admin_post_pgc_deletecache', 'pgc_admin_post_deletecache');
 function pgc_admin_post_deletecache()
 {
-  pgc_delete_calendar_cache();
-  pgc_add_notice(PGC_NOTICES_CACHE_DELETED, 'success', true);
-  exit;
+  if (current_user_can('manage_options')) {
+    pgc_delete_calendar_cache();
+    pgc_add_notice(PGC_NOTICES_CACHE_DELETED, 'success', true);
+    exit;
+  }
 }
 
 /**
@@ -1069,20 +1077,24 @@ function pgc_admin_post_deletecache()
 add_action('admin_post_pgc_verify', 'pgc_admin_post_verify');
 function pgc_admin_post_verify()
 {
-  try {
-    $client = getGoogleClient(true);
-    $client->refreshAccessToken();
-    pgc_add_notice(PGC_NOTICES_VERIFY_SUCCESS, 'success', true);
-    exit;
-  } catch (Exception $ex) {
-    pgc_die($ex);
+  if (current_user_can('manage_options')) {
+    try {
+      $client = getGoogleClient(true);
+      $client->refreshAccessToken();
+      pgc_add_notice(PGC_NOTICES_VERIFY_SUCCESS, 'success', true);
+      exit;
+    } catch (Exception $ex) {
+      pgc_die($ex);
+    }
   }
 }
 
 add_action('admin_post_pgc_remove_private', function () {
-  pgc_delete_plugin_data('private');
-  pgc_add_notice(PGC_NOTICES_REMOVE_SUCCESS, 'success', true);
-  exit;
+  if (current_user_can('manage_options')) {
+    pgc_delete_plugin_data('private');
+    pgc_add_notice(PGC_NOTICES_REMOVE_SUCCESS, 'success', true);
+    exit;
+  }
 });
 
 /**
@@ -1091,9 +1103,11 @@ add_action('admin_post_pgc_remove_private', function () {
 add_action('admin_post_pgc_remove', 'pgc_admin_post_remove');
 function pgc_admin_post_remove()
 {
-  pgc_delete_plugin_data('all');
-  pgc_add_notice(PGC_NOTICES_REMOVE_SUCCESS, 'success', true);
-  exit;
+  if (current_user_can('manage_options')) {
+    pgc_delete_plugin_data('all');
+    pgc_add_notice(PGC_NOTICES_REMOVE_SUCCESS, 'success', true);
+    exit;
+  }
 }
 
 /**
@@ -1102,26 +1116,28 @@ function pgc_admin_post_remove()
 add_action('admin_post_pgc_revoke', 'pgc_admin_post_revoke');
 function pgc_admin_post_revoke()
 {
-  try {
-    $client = getGoogleClient();
-    $accessToken = getDecoded('pgc_access_token');
-    if (!empty($accessToken)) {
-      $client->setAccessTokenInfo($accessToken);
+  if (current_user_can('manage_options')) {
+    try {
+      $client = getGoogleClient();
+      $accessToken = getDecoded('pgc_access_token');
+      if (!empty($accessToken)) {
+        $client->setAccessTokenInfo($accessToken);
+      }
+      $refreshToken = get_option("pgc_refresh_token");
+      if (!empty($refreshToken)) {
+        $client->setRefreshToken($refreshToken);
+      }
+      if (empty($accessToken) && empty($refreshToken)) {
+        throw new Exception(PGC_ERRORS_ACCESS_REFRESH_TOKEN_MISSING);
+      }
+      $client->revoke();
+      // Clear access and refresh tokens
+      pgc_delete_plugin_data('private');
+      pgc_add_notice(PGC_NOTICES_REVOKE_SUCCESS, 'success', true);
+      exit;
+    } catch (Exception $ex) {
+      pgc_die($ex);
     }
-    $refreshToken = get_option("pgc_refresh_token");
-    if (!empty($refreshToken)) {
-      $client->setRefreshToken($refreshToken);
-    }
-    if (empty($accessToken) && empty($refreshToken)) {
-      throw new Exception(PGC_ERRORS_ACCESS_REFRESH_TOKEN_MISSING);
-    }
-    $client->revoke();
-    // Clear access and refresh tokens
-    pgc_delete_plugin_data('private');
-    pgc_add_notice(PGC_NOTICES_REVOKE_SUCCESS, 'success', true);
-    exit;
-  } catch (Exception $ex) {
-    pgc_die($ex);
   }
 }
 
@@ -1131,13 +1147,14 @@ function pgc_admin_post_revoke()
 add_action('admin_post_pgc_authorize', 'pgc_admin_post_authorize');
 function pgc_admin_post_authorize()
 {
-
-  try {
-    $client = getGoogleClient();
-    $client->authorize(pgc_get_state_from_user());
-    exit;
-  } catch (Exception $ex) {
-    pgc_die($ex);
+  if (current_user_can('manage_options')) {
+    try {
+      $client = getGoogleClient();
+      $client->authorize(pgc_get_state_from_user());
+      exit;
+    } catch (Exception $ex) {
+      pgc_die($ex);
+    }
   }
 }
 
@@ -1148,25 +1165,27 @@ function pgc_admin_post_authorize()
 register_uninstall_hook(__FILE__, 'pgc_uninstall');
 function pgc_uninstall()
 {
-  try {
-    $client = getGoogleClient();
-    $accessToken = getDecoded('pgc_access_token');
-    if (!empty($accessToken)) {
-      $client->setAccessTokenInfo($accessToken);
+  if (current_user_can('manage_options')) {
+    try {
+      $client = getGoogleClient();
+      $accessToken = getDecoded('pgc_access_token');
+      if (!empty($accessToken)) {
+        $client->setAccessTokenInfo($accessToken);
+      }
+      $refreshToken = get_option("pgc_refresh_token");
+      if (!empty($refreshToken)) {
+        $client->setRefreshToken($refreshToken);
+      }
+      if (empty($accessToken) && empty($refreshToken)) {
+        throw new Exception(PGC_ERRORS_ACCESS_REFRESH_TOKEN_MISSING);
+      }
+      $client->revoke();
+    } catch (Exception $ex) {
+      // Too bad...
+    } finally {
+      // Clear all plugin data
+      pgc_delete_plugin_data('all');
     }
-    $refreshToken = get_option("pgc_refresh_token");
-    if (!empty($refreshToken)) {
-      $client->setRefreshToken($refreshToken);
-    }
-    if (empty($accessToken) && empty($refreshToken)) {
-      throw new Exception(PGC_ERRORS_ACCESS_REFRESH_TOKEN_MISSING);
-    }
-    $client->revoke();
-  } catch (Exception $ex) {
-    // Too bad...
-  } finally {
-    // Clear all plugin data
-    pgc_delete_plugin_data('all');
   }
 }
 
@@ -1244,16 +1263,18 @@ function pgc_die($error = null)
  */
 function pgc_validate_client_secret_input($input)
 {
-  if (
-    !empty($_FILES) && !empty($_FILES['pgc_client_secret'])
-    && is_uploaded_file($_FILES['pgc_client_secret']['tmp_name'])
-  ) {
-    $content = trim(file_get_contents($_FILES['pgc_client_secret']['tmp_name']));
-    $decoded = json_decode($content, true);
-    if (!empty($decoded)) {
-      return getPrettyJSONString($decoded);
+  if (current_user_can('manage_options')) {
+    if (
+      !empty($_FILES) && !empty($_FILES['pgc_client_secret'])
+      && is_uploaded_file($_FILES['pgc_client_secret']['tmp_name'])
+    ) {
+      $content = trim(file_get_contents($_FILES['pgc_client_secret']['tmp_name']));
+      $decoded = json_decode($content, true);
+      if (!empty($decoded)) {
+        return getPrettyJSONString($decoded);
+      }
+      add_settings_error('pgc', 'client_secret_input_error', PGC_ERRORS_CLIENT_SECRET_INVALID, 'error');
     }
-    add_settings_error('pgc', 'client_secret_input_error', PGC_ERRORS_CLIENT_SECRET_INVALID, 'error');
   }
   return null;
 }
@@ -1270,6 +1291,9 @@ function pgc_get_state_from_user()
 add_action('admin_init', 'pgc_settings_init');
 function pgc_settings_init()
 {
+  if (!current_user_can('manage_options')) {
+    return;
+  }
 
   // Important to first check state! Otherwise this can interfere with other plugins that do a redirect!
   // https://wordpress.org/support/topic/state-mismatch-error-with-contact-form-7/
