@@ -342,7 +342,7 @@ registerBlockType('pgc-plugin/calendar', {
             attrsArray.push(key + '="' + attrs[key] + '"');
         });
 
-        return <p>[pgc {attrsArray.join(" ")}]</p>
+        return <p className="wp-block-pgc-plugin-calendar">[pgc {attrsArray.join(" ")}]</p>
     },
     deprecated: [
         {
