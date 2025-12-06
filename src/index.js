@@ -102,9 +102,9 @@ registerBlockType('pgc-plugin/calendar', {
             className: 'pgc-block'
         });
 
-        const textAreaBlockProps = useBlockProps({
-            className: "pgc-fullcalendarconfigarea " + (hasValidFullCalendarConfigValue ? "" : "has-error")
-        });
+        // const textAreaBlockProps = useBlockProps({
+        //     className: "pgc-fullcalendarconfigarea " + (hasValidFullCalendarConfigValue ? "" : "has-error")
+        // });
 
         const calendars = props.attributes.calendars;
         let selectedCalendarCount = 0;
@@ -225,16 +225,18 @@ registerBlockType('pgc-plugin/calendar', {
 
         const fullCalendarConfigArea = showConfigArea ? (
             <Fragment>
-                <TextareaControl rows={10} onKeyDown={onAreaKeyDown}
-                    {...textAreaBlockProps}
-                    __nextHasNoMarginBottom={true}
-                    value={fullcalendarconfig}
-                    help={!hasValidFullCalendarConfigValue ? window.pgc_trans.malformed_json_short : ""}
-                    label={window.pgc_trans.fullcalendar_config}
-                    placeHolder={defaultFullcalendarConfig} onChange={onFullCalendarConfigChange} />
-                <div className="pgc-copy-link">
-                    <a href="#" onClick={(e) => { e.preventDefault(); onFullCalendarConfigChange(defaultFullcalendarConfig) }}>{window.pgc_trans.copy_default_fullcalendar_config}</a>
-                    <span onClick={() => setShowInfoModal(true)} className="dashicons dashicons-editor-help"></span>
+                <div {...blockProps}>
+                    <TextareaControl rows={10} onKeyDown={onAreaKeyDown}
+                        className={"pgc-fullcalendarconfigarea " + (hasValidFullCalendarConfigValue ? "" : "has-error")}
+                        __nextHasNoMarginBottom={true}
+                        value={fullcalendarconfig}
+                        help={!hasValidFullCalendarConfigValue ? window.pgc_trans.malformed_json_short : ""}
+                        label={window.pgc_trans.fullcalendar_config}
+                        placeHolder={defaultFullcalendarConfig} onChange={onFullCalendarConfigChange} />
+                    <div className="pgc-copy-link">
+                        <a href="#" onClick={(e) => { e.preventDefault(); onFullCalendarConfigChange(defaultFullcalendarConfig) }}>{window.pgc_trans.copy_default_fullcalendar_config}</a>
+                        <span onClick={() => setShowInfoModal(true)} className="dashicons dashicons-editor-help"></span>
+                    </div>
                 </div>
             </Fragment>
         ) : null;
