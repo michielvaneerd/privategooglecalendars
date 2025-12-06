@@ -93,14 +93,18 @@ registerBlockType('pgc-plugin/calendar', {
     },
     edit(props) {
 
-        const blockProps = useBlockProps({
-            className: 'pgc-block'
-        });
-
         const [hasValidFullCalendarConfigValue, setHasValidFullCalendarConfigValue]
             = useState(hasValidFullCalendarConfigValueCheck(props.attributes.fullcalendarconfig));
         const [showConfigArea, setShowConfigArea] = useState(props.attributes.fullcalendarconfig !== "");
         const [showInfoModal, setShowInfoModal] = useState(false);
+
+        const blockProps = useBlockProps({
+            className: 'pgc-block'
+        });
+
+        const textAreaBlockProps = useBlockProps({
+            className: "pgc-fullcalendarconfigarea " + (hasValidFullCalendarConfigValue ? "" : "has-error")
+        });
 
         const calendars = props.attributes.calendars;
         let selectedCalendarCount = 0;
@@ -222,8 +226,8 @@ registerBlockType('pgc-plugin/calendar', {
         const fullCalendarConfigArea = showConfigArea ? (
             <Fragment>
                 <TextareaControl rows={10} onKeyDown={onAreaKeyDown}
+                    {...textAreaBlockProps}
                     __nextHasNoMarginBottom={true}
-                    className={"pgc-fullcalendarconfigarea " + (hasValidFullCalendarConfigValue ? "" : "has-error")}
                     value={fullcalendarconfig}
                     help={!hasValidFullCalendarConfigValue ? window.pgc_trans.malformed_json_short : ""}
                     label={window.pgc_trans.fullcalendar_config}
@@ -342,6 +346,8 @@ registerBlockType('pgc-plugin/calendar', {
             attrsArray.push(key + '="' + attrs[key] + '"');
         });
 
+        // Somehow older versions of the plugin expected the wp-block-pgc-plugin-calendar classname.
+        // But I never set this myself.
         return <p className="wp-block-pgc-plugin-calendar">[pgc {attrsArray.join(" ")}]</p>
     },
     deprecated: [
