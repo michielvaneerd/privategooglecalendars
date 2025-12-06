@@ -1,5 +1,3 @@
-version: '3.3'
-
 services:
   db:
     image: mariadb
@@ -38,6 +36,9 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_DEBUG', true);
+        define('SCRIPT_DEBUG', true);
     #extra_hosts:
       # Map the used hostname to the IP only for Multipass
     #  - "app.local.com:172.17.0.1"

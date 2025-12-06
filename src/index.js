@@ -1,5 +1,5 @@
 import { registerBlockType } from '@wordpress/blocks';
-import { InspectorControls } from '@wordpress/block-editor';
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { Fragment, useState, useEffect } from '@wordpress/element';
 import { CheckboxControl, PanelBody, TextControl, TextareaControl, Modal, HorizontalRule, SelectControl } from '@wordpress/components';
 
@@ -49,9 +49,6 @@ const MyInfoModal = function (props) {
 };
 
 registerBlockType('pgc-plugin/calendar', {
-    title: 'Private Google Calendars',
-    icon: 'calendar',
-    category: 'widgets',
     attributes: {
         calendars: {
             type: "object",
@@ -95,6 +92,10 @@ registerBlockType('pgc-plugin/calendar', {
         }
     },
     edit(props) {
+
+        const blockProps = useBlockProps({
+            className: 'pgc-block'
+        });
 
         const [hasValidFullCalendarConfigValue, setHasValidFullCalendarConfigValue]
             = useState(hasValidFullCalendarConfigValueCheck(props.attributes.fullcalendarconfig));
@@ -156,12 +157,13 @@ registerBlockType('pgc-plugin/calendar', {
         calendarList = Object.keys(window.pgc_selected_calendars).map((id) => {
             const calendar = window.pgc_selected_calendars[id];
             return <CheckboxControl style={{ backgroundColor: calendar.backgroundColor }} className="pgc-sidebar-row" onChange={onCalendarSelectionChange.bind(id)}
-                label={calendar.summary} checked={(id in calendars) && calendars[id]} />
+                __nextHasNoMarginBottom={true}
+                label={calendar.summary} checked={(id in calendars) && calendars[id]} key={id} />
         });
         if (!calendarList.length) {
             calendarList.push(<em>No private calendars</em>);
         }
-        calendarList.push(<HorizontalRule />);
+        calendarList.push(<HorizontalRule key="hr" />);
 
 
         const eventPopupList = [
@@ -175,18 +177,19 @@ registerBlockType('pgc-plugin/calendar', {
             ["eventcalendarname", window.pgc_trans.eventcalendarname],
         ].map((item) => {
             return <CheckboxControl className="pgc-sidebar-row" onChange={onCalendarConfigChange.bind(item[0])}
-                label={item[1]} checked={config[item[0]]} />;
+                __nextHasNoMarginBottom={true}
+                label={item[1]} checked={config[item[0]]} key={item[0]} />;
         });
 
         const hidePassedDays = hideoptions.hidepassed
             ?
             <TextControl label={`${window.pgc_trans.more_than} ${hideoptions.hidepasseddays} ${window.pgc_trans.days_ago}`} type="number" min={0}
-                value={hideoptions.hidepasseddays} onChange={onHideoptionsChange.bind('hidepasseddays')} />
+                value={hideoptions.hidepasseddays} onChange={onHideoptionsChange.bind('hidepasseddays')} __next40pxDefaultSize={true} __nextHasNoMarginBottom={true} />
             : null;
         const hideFutureDays = hideoptions.hidefuture
             ?
             <TextControl label={`${window.pgc_trans.more_than} ${hideoptions.hidefuturedays} ${window.pgc_trans.days_from_now}`} type="number" min={0}
-                value={hideoptions.hidefuturedays} onChange={onHideoptionsChange.bind('hidefuturedays')} />
+                value={hideoptions.hidefuturedays} onChange={onHideoptionsChange.bind('hidefuturedays')} __next40pxDefaultSize={true} __nextHasNoMarginBottom={true} />
             : null;
 
         useEffect(() => {
@@ -219,6 +222,7 @@ registerBlockType('pgc-plugin/calendar', {
         const fullCalendarConfigArea = showConfigArea ? (
             <Fragment>
                 <TextareaControl rows={10} onKeyDown={onAreaKeyDown}
+                    __nextHasNoMarginBottom={true}
                     className={"pgc-fullcalendarconfigarea " + (hasValidFullCalendarConfigValue ? "" : "has-error")}
                     value={fullcalendarconfig}
                     help={!hasValidFullCalendarConfigValue ? window.pgc_trans.malformed_json_short : ""}
@@ -226,7 +230,7 @@ registerBlockType('pgc-plugin/calendar', {
                     placeHolder={defaultFullcalendarConfig} onChange={onFullCalendarConfigChange} />
                 <div className="pgc-copy-link">
                     <a href="#" onClick={(e) => { e.preventDefault(); onFullCalendarConfigChange(defaultFullcalendarConfig) }}>{window.pgc_trans.copy_default_fullcalendar_config}</a>
-                    <span onClick={() => setShowInfoModal(true)} class="dashicons dashicons-editor-help"></span>
+                    <span onClick={() => setShowInfoModal(true)} className="dashicons dashicons-editor-help"></span>
                 </div>
             </Fragment>
         ) : null;
@@ -240,17 +244,21 @@ registerBlockType('pgc-plugin/calendar', {
                         title={window.pgc_trans.selected_calendars + " (" + (selectedCalendarCount === 0 ? window.pgc_trans.none : selectedCalendarCount) + ")"}
                         initialOpen={true}>
                         {calendarList}
-                        <TextControl label={window.pgc_trans.comma_separated_list_calendar_ids} value={publiccalendarids} onChange={onPublicCalendarIdsChange} />
+                        <TextControl label={window.pgc_trans.comma_separated_list_calendar_ids} value={publiccalendarids} onChange={onPublicCalendarIdsChange}
+                            __next40pxDefaultSize={true} __nextHasNoMarginBottom={true} />
                     </PanelBody>
                     <PanelBody
                         title={window.pgc_trans.calendar_options}
                         initialOpen={true}>
                         <CheckboxControl className="pgc-sidebar-row" onChange={setShowConfigArea}
+                            __nextHasNoMarginBottom={true}
                             label={window.pgc_trans.edit_fullcalendar_config} checked={showConfigArea} />
                         <CheckboxControl className="pgc-sidebar-row" onChange={onHideoptionsChange.bind('hidepassed')}
+                            __nextHasNoMarginBottom={true}
                             label={window.pgc_trans.hide_passed_events} checked={hideoptions.hidepassed} />
                         {hidePassedDays}
                         <CheckboxControl className="pgc-sidebar-row" onChange={onHideoptionsChange.bind('hidefuture')}
+                            __nextHasNoMarginBottom={true}
                             label={window.pgc_trans.hide_future_events} checked={hideoptions.hidefuture} />
                         {hideFutureDays}
                     </PanelBody>
@@ -261,7 +269,7 @@ registerBlockType('pgc-plugin/calendar', {
                             { value: '', label: window.pgc_trans.default }, ...window.pgc_trans.themes.map(function (theme) {
                                 return { value: theme, label: theme };
                             })
-                        ]} />
+                        ]} __next40pxDefaultSize={true} __nextHasNoMarginBottom={true} />
                     </PanelBody>
                     <PanelBody
                         title={window.pgc_trans.filter_options}>
@@ -269,8 +277,8 @@ registerBlockType('pgc-plugin/calendar', {
                             { value: '', label: window.pgc_trans.hide_filter },
                             { value: 'top', label: window.pgc_trans.show_filter_top },
                             { value: 'bottom', label: window.pgc_trans.show_filter_bottom }
-                        ]} />
-                        <TextControl label={window.pgc_trans.filter_uncheckedcalendarids} value={uncheckedcalendarids} onChange={onUncheckedCalendarIdsChange} />
+                        ]} __next40pxDefaultSize={true} __nextHasNoMarginBottom={true} />
+                        <TextControl label={window.pgc_trans.filter_uncheckedcalendarids} value={uncheckedcalendarids} onChange={onUncheckedCalendarIdsChange} __next40pxDefaultSize={true} __nextHasNoMarginBottom={true} />
                     </PanelBody>
                     <PanelBody
                         title={window.pgc_trans.popup_options + " (" + (config.eventpopup ? window.pgc_trans.show : window.pgc_trans.hide) + ")"}
@@ -278,7 +286,7 @@ registerBlockType('pgc-plugin/calendar', {
                         {eventPopupList}
                     </PanelBody>
                 </InspectorControls>
-                <div>Private Google Calendars Block</div>
+                <div {...blockProps}>Private Google Calendars Block</div>
                 {fullCalendarConfigArea}
                 {infoModal}
             </Fragment>

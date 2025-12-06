@@ -1,0 +1,9 @@
+{
+    "apiVersion": 3,
+    "name": "pgc-plugin/calendar",
+    "title": "Private Google Calendars",
+    "icon": "calendar",
+    "category": "widgets",
+    "editorScript": "file:./build/index.js",
+    "editorStyle": "file:./css/block-style.css"
+}
