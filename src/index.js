@@ -99,7 +99,7 @@ registerBlockType('pgc-plugin/calendar', {
 
         const [hasValidFullCalendarConfigValue, setHasValidFullCalendarConfigValue]
             = useState(hasValidFullCalendarConfigValueCheck(props.attributes.fullcalendarconfig));
-        const [showConfigArea, setShowConfigArea] = useState(props.attributes.fullcalendarconfig);
+        const [showConfigArea, setShowConfigArea] = useState(props.attributes.fullcalendarconfig !== "");
         const [showInfoModal, setShowInfoModal] = useState(false);
 
         const calendars = props.attributes.calendars;
